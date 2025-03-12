@@ -6,10 +6,23 @@
     <title>React Infused html</title>
 </head>
 <body>
+    <!-- Root container where React will render the content -->
     <div id="root"></div>
 
-    <!-- ? Injecting the react using the CDN -->
+    <!-- Injecting React using the CDN -->
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Adding React Code -->
+    <script>
+        // Creating a React element (h1 tag) using React.createElement
+        const heading = React.createElement("h1", {}, "Hello world from React");
+        
+        // Selecting the root container where React will render the element -> this is job of reactDOM not the react
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+
+        // Rendering the React element inside the root container
+        root.render(heading);
+    </script>
 </body>
 </html>
