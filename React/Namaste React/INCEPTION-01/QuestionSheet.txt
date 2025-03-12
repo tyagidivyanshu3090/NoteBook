@@ -7,3 +7,9 @@ Commit 2:
 Q: To use the react we have used the CDN links. what is CDN?
 Q: In CDN - we have 2 link. what are they and what is the difference btw them?
 Q: What is crossOrigin in the CDN link?
+
+
+Commit 3:
+Q: What is React.createElement, how many parameters it takes and what is the output of it?
+        - By output we mean what it produces?
+Q: What is render function in react?

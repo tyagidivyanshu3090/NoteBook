@@ -22,7 +22,7 @@ The project consists of a single HTML file with embedded JavaScript.
 
 
 
-# Commit 2: index1.html file
+# Commit 2: index2.html file
 
 ## Introduction
 - Populating the UI using the react not javaScript
@@ -39,3 +39,7 @@ The project consists of a single HTML file with embedded JavaScript.
     - The ReactDOM.createRoot(document.getElementById('root')) initializes React inside the root div.- The root.render(heading) method renders the created element inside the root div.
 
 
+# Commit 3: index3.html file & App.js File
+
+- Injecting the react code in separate file App.js & couple with index.html using the script tag
+- Describing the `React.createElement()` fucntion in the App.js file & what it gives
