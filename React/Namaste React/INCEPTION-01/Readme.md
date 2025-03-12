@@ -43,3 +43,6 @@ The project consists of a single HTML file with embedded JavaScript.
 
 - Injecting the react code in separate file App.js & couple with index.html using the script tag
 - Describing the `React.createElement()` fucntion in the App.js file & what it gives
+
+
+# Commit 4: Complex Structure in React application
