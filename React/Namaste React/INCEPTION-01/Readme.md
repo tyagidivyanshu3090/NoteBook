@@ -19,3 +19,11 @@ The project consists of a single HTML file with embedded JavaScript.
 - `document.getElementById('root')`: This method selects the element with the specified id.
 - `innerHTML`: This property allows you to set or get the HTML content inside an element.
 - `appendChild()`: This method adds a newly created element as a child to an existing element in the DOM.
+
+
+# Commit 2: index1.html file
+
+## Introduction
+- Populating the UI using the react not javaScript
+- To get react into the project we have used `CDN : Content delivery network`
+    - A Content Delivery Network (CDN) is a system of distributed servers that work together to deliver web content (like images, videos, scripts, and stylesheets) to users based on their geographic location. The goal of a CDN is to reduce latency and improve website load times by caching content on multiple servers worldwide.

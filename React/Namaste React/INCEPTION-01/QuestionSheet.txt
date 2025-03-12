@@ -1,0 +1,8 @@
+
+Commit 1:
+
+Q: In the commit 1 we have used javaScript to populated the html page. what are the 4 method used to do so?
+
+Commit 2:
+Q: To use the react we have used the CDN links. what is CDN?
+Q: In CDN - we have 2 link. what are they and what is the difference btw them?
