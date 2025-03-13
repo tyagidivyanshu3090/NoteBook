@@ -20,3 +20,15 @@ To create a `tsconfig.json` file, run:
 ```sh
 tsc --init
 ```
+
+## 🙋🏻 `tsc --watch` Command
+
+### What is `tsc --watch`?
+
+The `tsc --watch` command is used to **compile TypeScript code into JavaScript** and **continuously watch for changes**. Whenever a TypeScript file is modified, it automatically recompiles only the updated files.
+
+### Usage:
+
+```sh
+tsc --watch
+```
