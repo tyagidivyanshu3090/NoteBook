@@ -12,3 +12,11 @@ To install TypeScript globally on your system, run:
 ```sh
 npm install -g typescript
 ```
+
+## 🔥 Setting up TypeScript Configuration
+
+To create a `tsconfig.json` file, run:
+
+```sh
+tsc --init
+```
