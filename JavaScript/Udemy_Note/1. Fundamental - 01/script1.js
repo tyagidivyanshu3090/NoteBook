@@ -24,3 +24,6 @@
 // console.log(typeof data); // "boolean"
 
 
+// ? Commit 4 -> Bug in javaScript:
+console.log(typeof null); // 'object' rather it shall be null 
+console.log(typeof undefined); // 'undefined'

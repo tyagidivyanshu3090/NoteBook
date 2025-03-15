@@ -1,11 +1,11 @@
-# commit 1
+# 📝 commit 1
 
 - File used: `script1.js`
 - Infusing the script code in the html using the script tag
 - Using the alert function in the first commit 
 - 🤔 What is difference btw alert and prompt function in the javaScript? 
 
-# Commit 2: Convention
+# 📝 Commit 2: Convention
 
 ## Variable Naming Convention
 
@@ -33,7 +33,7 @@ class UserAccount {
 }
 ```
 
-# Commit 3: Dynamic Typing in JavaScript
+# 📝 Commit 3: Dynamic Typing in JavaScript
 
 ## Notes
 JavaScript is a **dynamically typed language**, meaning variables are not explicitly bound to a specific data type. Instead, the type is determined at runtime and can change based on the assigned value.
@@ -41,3 +41,19 @@ JavaScript is a **dynamically typed language**, meaning variables are not explic
 ## Considerations:
 ⚠️ May lead to unintended type conversions (e.g., `"5" + 5 = "55"`).
 ⚠️ Requires careful handling to avoid unexpected behavior.
+
+
+# 📝 Commit 4: typeof null
+
+## 🔍 Overview
+
+- In JavaScript, using the typeof operator on null does not return null as expected. Instead, it returns 'object'. This is a known historical bug that exists for legacy reasons.
+
+## 😭 Why does this happen?
+
+- In the early versions of JavaScript, values were represented in a way that stored type information in the lower bits of their binary representation. null was represented as 0x00, which was mistakenly interpreted as an object. This was recognized as a mistake but remains unchanged for backward compatibility.
+
+```js
+console.log(typeof null); // 'object'
+console.log(typeof undefined); // 'undefined'
+```
