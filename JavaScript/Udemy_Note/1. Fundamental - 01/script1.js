@@ -4,14 +4,23 @@
  
 // ? Commit 2 -> DataType & typeOf operator
 
-let PI = 3.14;  // * Snake convention
-let javascriptIsFun = true;
-console.log(typeof PI);
-console.log(typeof 42); // "number"
-console.log(typeof "Hello"); // "string"
-console.log(typeof true); // "boolean"
-console.log(typeof {}); // "object"
-console.log(typeof undefined); // "undefined"
+// let PI = 3.14;  // * Upper Snake convention -> used for the constant
+// console.log(typeof PI); // "number"
+// console.log(typeof 42); // "number"
+// console.log(typeof "Hello"); // "string"
+// console.log(typeof true); // "boolean"
+// console.log(typeof {}); // "object"
+// console.log(typeof undefined); // "undefined"
 
+// ? Commit 3 -> Dynamic type in javaScript
+
+// let data = 10;    // data is a number
+// console.log(typeof data); // "number"
+
+// data = "Hello";   // data is now a string
+// console.log(typeof data); // "string"
+
+// data = true;      // data is now a boolean
+// console.log(typeof data); // "boolean"
 
 

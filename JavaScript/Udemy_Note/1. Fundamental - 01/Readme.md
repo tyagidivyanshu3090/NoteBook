@@ -32,3 +32,12 @@ class UserAccount {
   }
 }
 ```
+
+# Commit 3: Dynamic Typing in JavaScript
+
+## Notes
+JavaScript is a **dynamically typed language**, meaning variables are not explicitly bound to a specific data type. Instead, the type is determined at runtime and can change based on the assigned value.
+
+## Considerations:
+⚠️ May lead to unintended type conversions (e.g., `"5" + 5 = "55"`).
+⚠️ Requires careful handling to avoid unexpected behavior.
