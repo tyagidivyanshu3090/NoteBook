@@ -57,3 +57,13 @@ JavaScript is a **dynamically typed language**, meaning variables are not explic
 console.log(typeof null); // 'object'
 console.log(typeof undefined); // 'undefined'
 ```
+
+# 📝 Commit 4: let, const and var
+
+- variable declared with `const` can neither be reassigned nor redeclared.
+- variable declared with `const` must be initialised with a value 
+
+```js
+const firstName; // Error: Missing initializer in const declaration
+```
+

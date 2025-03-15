@@ -25,5 +25,8 @@
 
 
 // ? Commit 4 -> Bug in javaScript:
-console.log(typeof null); // 'object' rather it shall be null 
-console.log(typeof undefined); // 'undefined'
+// console.log(typeof null); // 'object' rather it shall be null 
+// console.log(typeof undefined); // 'undefined'
+
+// ? Commit 5 -> let, const and var 
+
