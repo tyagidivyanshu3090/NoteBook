@@ -30,3 +30,13 @@
 
 // ? Commit 5 -> let, const and var 
 
+
+// ? Commit 6 -> operator
+
+console.log(3 ** 4); // Exponent symbol: 81
+console.log(Math.pow(3,4)); // Exponent symbol: 81
+
+// Using '+' for concatenation
+let firstName = 'Navjot';
+let lastName = 'Tyagi'
+console.log(firstName + ' ' + lastName) // Navjot Tyagi
