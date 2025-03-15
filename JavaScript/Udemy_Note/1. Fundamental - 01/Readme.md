@@ -81,3 +81,25 @@ console.log(5 ** 2); // 25 (5 squared)
 console.log(Math.pow(2, 3)); // 8
 console.log(Math.pow(5, 2)); // 25
 ```
+
+# 📝 Commit 6: String Literal and Template Literal
+
+## 📌 String Literal
+A **string literal** is a sequence of characters enclosed in quotes (single `' '`, double `" "`, or backticks `` ` ` ``) that represents a fixed string value in a program.
+
+## 🎯 Why Use Backticks?
+Among the three options, **backticks** (`` ` ` ``) are the most powerful because they allow us to create **template literals**, which offer advanced string manipulation features.
+
+## 🚀 Template Literal
+A **template literal** is a special type of string introduced in **ES6 (ECMAScript 2015)** that makes it easier to:
+- Embed expressions within strings.
+- Write multi-line strings without using escape characters (`\n`).
+- Improve readability and code maintainability.
+
+### ✅ Example:
+```js
+let name = "Alice";
+let age = 25;
+let message = `My name is ${name} and I am ${age} years old.`;
+console.log(message); 
+// Output: My name is Alice and I am 25 years old.

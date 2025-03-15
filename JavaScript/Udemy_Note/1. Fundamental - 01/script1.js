@@ -33,10 +33,30 @@
 
 // ? Commit 6 -> operator
 
-console.log(3 ** 4); // Exponent symbol: 81
-console.log(Math.pow(3,4)); // Exponent symbol: 81
+// console.log(3 ** 4); // Exponent symbol: 81
+// console.log(Math.pow(3,4)); // Exponent symbol: 81
 
-// Using '+' for concatenation
-let firstName = 'Navjot';
-let lastName = 'Tyagi'
-console.log(firstName + ' ' + lastName) // Navjot Tyagi
+// //  Using '+' for concatenation
+// let firstName = 'Navjot'
+// let lastName = 'Tyagi'
+// console.log(firstName + ' ' + lastName) // Navjot Tyagi
+
+// ? Commit 7 -> String Literals & Template literal
+
+// console.log(`
+//     Hello world
+//     What is your name
+//     `);   // Supports Multi-line Strings
+
+
+// // Allow variable substitution:
+// let personName = "John";
+// let personAge = 30;
+// let message = `My name is ${personName} and I am ${personAge} years old.`;
+// console.log(message)
+
+// // Including the expression in template literal
+// let year = 2025;
+// let birthYear = 2000;
+// let age = `I am ${year - birthYear} years old.`;
+// console.log(age)
