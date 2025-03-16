@@ -72,17 +72,26 @@
 
 // ? Commit 9 -> Truthy and falsy value
 
-console.log(Boolean(false)); // false
-console.log(Boolean(0)); // false
-console.log(Boolean("")); // false
-console.log(Boolean(null)); // false
-console.log(Boolean(undefined)); // false
-console.log(Boolean(NaN)); // false
-console.log(Boolean(0n)); // false
+// console.log(Boolean(false)); // false
+// console.log(Boolean(0)); // false
+// console.log(Boolean("")); // false
+// console.log(Boolean(null)); // false
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean(NaN)); // false
+// console.log(Boolean(0n)); // false
 
-console.log(Boolean(1)); // true
-console.log(Boolean("hello")); // true
-console.log(Boolean([])); // true (empty array)
-console.log(Boolean({})); // true (empty object)
-console.log(Boolean("0")); // true (string "0" is not the number 0)
-console.log(Boolean(function () {})); // true (functions are truthy)
+// console.log(Boolean(1)); // true
+// console.log(Boolean("hello")); // true
+// console.log(Boolean([])); // true (empty array)
+// console.log(Boolean({})); // true (empty object)
+// console.log(Boolean("0")); // true (string "0" is not the number 0)
+// console.log(Boolean(function () {})); // true (functions are truthy)
+
+// ? Commit 10 -> Using Ternary Operator in template literal
+
+let expressionValue = 20;
+
+console.log(`I'm ${expressionValue} years old`);
+
+let age = 15;
+console.log(`You are premitted to drink ${age > 18 ? "wine 🍷" : "water 💧"}`);

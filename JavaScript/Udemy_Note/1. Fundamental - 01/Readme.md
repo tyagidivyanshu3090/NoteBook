@@ -145,3 +145,15 @@ console.log(Boolean({})); // true (empty object)
 console.log(Boolean("0")); // true (string "0" is not the number 0)
 console.log(Boolean(function () {})); // true (functions are truthy)
 ```
+
+# 📝 Commit 9: Ternary Operator
+
+- The ternary operator in JavaScript is a shorthand for the if-else statement. It is also known as the conditional operator because it evaluates a condition and returns one of two values based on whether the condition is true or false.
+
+- `condition ? expressionIfTrue : expressionIfFalse;`
+
+```js
+let age = 18;
+let canVote = age >= 18 ? "Yes, you can vote!" : "No, you cannot vote.";
+console.log(canVote);
+```
