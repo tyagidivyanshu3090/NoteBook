@@ -60,3 +60,11 @@ const greet = function () {
 
 - **`Closure:`** A closure is a function that remembers the variables from its outer scope, even after the outer function has finished executing.
 - A **``callback function`**` is a function that is passed as an argument to another function and is executed later inside that function. Callbacks are commonly used for asynchronous operations, such as fetching data, handling events, or executing code after a delay.
+
+# 📝 Commit 5: Arrays in JavaScript
+
+- push(): add element in the end of the array and return the length of array
+- unshift(): Adds elements to the beginning & also return the length of array
+- pop(): Removes the last element
+- shift(): Removes the first element
+- indexOf(): Finds the index of an element

@@ -70,15 +70,34 @@
 
 // ? Commit 5: Assignment
 
-const calAvg = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+// const calAvg = (score1, score2, score3) => (score1 + score2 + score3) / 3;
 
-const checkWinner = function (avgDolphins, avgKolalas) {
-  if (avgDolphins > 2 * avgKolalas) return console.log(`Dolphins wins`);
-  else if (avgKolalas > 2 * avgDolphins) return console.log(`Kolas wins`);
-  else return console.log(`No team win the match`);
-};
+// const checkWinner = function (avgDolphins, avgKolalas) {
+//   if (avgDolphins > 2 * avgKolalas) return console.log(`Dolphins wins`);
+//   else if (avgKolalas > 2 * avgDolphins) return console.log(`Kolas wins`);
+//   else return console.log(`No team win the match`);
+// };
 
-let avgDolphins = calAvg(44, 23, 71);
-let avgKolalas = calAvg(65, 54, 49);
+// let avgDolphins = calAvg(44, 23, 71);
+// let avgKolalas = calAvg(65, 54, 49);
 
-checkWinner(avgDolphins, avgKolalas);
+// checkWinner(avgDolphins, avgKolalas);
+
+// ? Array Method:
+
+let friends = ["Navjot", "Jeet", "Ayushi"];
+
+console.log(friends.push("Divyanshu"));
+// Output: 4 (push() returns the new length of the array)
+
+friends.unshift(0);
+console.log(friends);
+// Output: [0, "Navjot", "Jeet", "Ayushi", "Divyanshu"] (0 is added to the beginning)
+
+friends.shift();
+console.log(friends);
+// Output: ["Navjot", "Jeet", "Ayushi", "Divyanshu"] (Removes the first element '0')
+
+friends.pop();
+console.log(friends);
+// Output: ["Navjot", "Jeet", "Ayushi"] (Removes the last element 'Divyanshu')
