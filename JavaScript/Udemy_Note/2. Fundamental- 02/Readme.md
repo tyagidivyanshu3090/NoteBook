@@ -8,7 +8,6 @@ This commit introduces JavaScript's strict mode, which helps in writing safer an
 
 - Added `'use strict';` at the beginning of the script to enable strict mode.
 - Ensured that strict mode is the first statement in the script.
-- Highlighted how strict mode prevents accidental errors.
 
 ## Benefits
 
@@ -27,3 +26,7 @@ myVar = 10; // ❌ Error: myVar is not defined
 
 - Always place `'use strict';` at the top of your script or function.
 - Helps in writing better JavaScript code by making errors more explicit.
+
+# 📝 Commit 1: Function Declaration and expression
+
+- Function Declaration are hoisted where as Function Expression are not hoisted
