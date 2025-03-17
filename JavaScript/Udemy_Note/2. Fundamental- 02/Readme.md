@@ -47,3 +47,16 @@ const greet = function () {
 - If there is only one parameter, parentheses can be omitted
 - If there is only one expression, curly braces {} and return can be omitted
 - If there are no parameters, empty parentheses () are required:
+
+# 📝 Commit 4: Function calling Function
+
+- ✅ You can call a function inside another function for better code reusability.
+- ✅ Inner functions have access to variables from outer functions (closures).
+- ✅ Functions can be passed as arguments and executed later (callback functions).
+- ✅ A function can call itself (recursion).
+- ✅ Functions can return other functions (higher-order functions).
+
+## 🤔
+
+- **`Closure:`** A closure is a function that remembers the variables from its outer scope, even after the outer function has finished executing.
+- A **``callback function`**` is a function that is passed as an argument to another function and is executed later inside that function. Callbacks are commonly used for asynchronous operations, such as fetching data, handling events, or executing code after a delay.
