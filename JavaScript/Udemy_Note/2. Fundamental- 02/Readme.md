@@ -27,6 +27,23 @@ myVar = 10; // ❌ Error: myVar is not defined
 - Always place `'use strict';` at the top of your script or function.
 - Helps in writing better JavaScript code by making errors more explicit.
 
-# 📝 Commit 1: Function Declaration and expression
+# 📝 Commit 2: Function Declaration and expression
 
-- Function Declaration are hoisted where as Function Expression are not hoisted
+- A Function Declaration defines a function with the function keyword, followed by a name. These functions are hoisted, meaning they can be called before they are defined in the code.
+- A Function Expression defines a function and assigns it to a variable. These functions are not hoisted, meaning they cannot be called before their definition.
+
+```js
+greet(); // ❌ Error: Cannot access 'greet' before initialization
+
+const greet = function () {
+  console.log("Hello!");
+};
+```
+
+# 📝 Commit 3: Arrow Function
+
+- Arrow function are not hosisted in javaScript
+- They dont get the this keyword [ Studied later ]
+- If there is only one parameter, parentheses can be omitted
+- If there is only one expression, curly braces {} and return can be omitted
+- If there are no parameters, empty parentheses () are required:
