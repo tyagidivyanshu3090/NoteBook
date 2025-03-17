@@ -39,30 +39,46 @@
 
 // ? Commit 4: Function calling function
 
-// * CallBack Function
+// // * CallBack Function
 
-function processData(data, callback) {
-  console.log("Processing:", data);
-  callback(); // Calling the passed function
-}
+// function processData(data, callback) {
+//   console.log("Processing:", data);
+//   callback(); // Calling the passed function
+// }
 
-function onComplete() {
-  console.log("Processing complete!");
-}
+// function onComplete() {
+//   console.log("Processing complete!");
+// }
 
-processData("User Data", onComplete);
-/* 
-Output:
-Processing: User Data
-Processing complete!
-*/
+// processData("User Data", onComplete);
+// /*
+// Output:
+// Processing: User Data
+// Processing complete!
+// */
 
-//* Closure: A closure is a function that remembers the variables from its outer scope, even after the outer function has finished executing.
-function outerFunction(outerValue) {
-  function innerFunction(innerValue) {
-    console.log(`Outer: ${outerValue}, Inner: ${innerValue}`);
-  }
-  innerFunction(5); // Calling inner function
-}
+// //* Closure: A closure is a function that remembers the variables from its outer scope, even after the outer function has finished executing.
 
-outerFunction(10); // Output: Outer: 10, Inner: 5
+// function outerFunction(outerValue) {
+//   function innerFunction(innerValue) {
+//     console.log(`Outer: ${outerValue}, Inner: ${innerValue}`);
+//   }
+//   innerFunction(5); // Calling inner function
+// }
+
+// outerFunction(10); // Output: Outer: 10, Inner: 5
+
+// ? Commit 5: Assignment
+
+const calAvg = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const checkWinner = function (avgDolphins, avgKolalas) {
+  if (avgDolphins > 2 * avgKolalas) return console.log(`Dolphins wins`);
+  else if (avgKolalas > 2 * avgDolphins) return console.log(`Kolas wins`);
+  else return console.log(`No team win the match`);
+};
+
+let avgDolphins = calAvg(44, 23, 71);
+let avgKolalas = calAvg(65, 54, 49);
+
+checkWinner(avgDolphins, avgKolalas);
