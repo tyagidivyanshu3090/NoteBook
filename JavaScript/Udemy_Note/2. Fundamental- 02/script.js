@@ -83,21 +83,38 @@
 
 // checkWinner(avgDolphins, avgKolalas);
 
-// ? Array Method:
+// ? Commit 6: Array Method:
 
-let friends = ["Navjot", "Jeet", "Ayushi"];
+// let friends = ["Navjot", "Jeet", "Ayushi"];
 
-console.log(friends.push("Divyanshu"));
-// Output: 4 (push() returns the new length of the array)
+// console.log(friends.push("Divyanshu"));
+// // Output: 4 (push() returns the new length of the array)
 
-friends.unshift(0);
-console.log(friends);
-// Output: [0, "Navjot", "Jeet", "Ayushi", "Divyanshu"] (0 is added to the beginning)
+// friends.unshift(0);
+// console.log(friends);
+// // Output: [0, "Navjot", "Jeet", "Ayushi", "Divyanshu"] (0 is added to the beginning)
 
-friends.shift();
-console.log(friends);
-// Output: ["Navjot", "Jeet", "Ayushi", "Divyanshu"] (Removes the first element '0')
+// friends.shift();
+// console.log(friends);
+// // Output: ["Navjot", "Jeet", "Ayushi", "Divyanshu"] (Removes the first element '0')
 
-friends.pop();
-console.log(friends);
-// Output: ["Navjot", "Jeet", "Ayushi"] (Removes the last element 'Divyanshu')
+// friends.pop();
+// console.log(friends);
+// // Output: ["Navjot", "Jeet", "Ayushi"] (Removes the last element 'Divyanshu')
+
+// ? Commit 7: Object
+
+const person = {
+  name: "Alice",
+  age: 25,
+  "favorite color": "blue",
+  country: "USA",
+};
+
+console.log(person["name"]); // Output: Alice
+console.log(person["age"]); // Output: 25
+console.log(person["favorite color"]); // Output: blue
+
+// *  Using variable name for the key
+const key = "country";
+console.log(person[key]); // USA

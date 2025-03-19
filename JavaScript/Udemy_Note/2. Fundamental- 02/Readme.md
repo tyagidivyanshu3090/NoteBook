@@ -68,3 +68,32 @@ const greet = function () {
 - pop(): Removes the last element
 - shift(): Removes the first element
 - indexOf(): Finds the index of an element
+
+## 📝 Commit 6: Object in JavaScript
+
+## Object Definition
+
+- To define an object, use object literals which take key-value pairs.
+
+## Bracket Notation (`[]`)
+
+- Bracket notation allows accessing object properties dynamically, using a string or variable.
+- The property can be a string, variable, or expression inside the bracket notation.
+
+### Syntax:
+
+```js
+// object["property"] or object[variable]
+```
+
+### Example:
+
+```js
+const person = {
+  name: "John",
+  age: 30,
+};
+
+const property = "name";
+console.log(person[property]); // Output: John
+```
