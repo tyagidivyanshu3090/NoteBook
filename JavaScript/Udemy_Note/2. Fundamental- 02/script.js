@@ -104,17 +104,28 @@
 
 // ? Commit 7: Object
 
-const person = {
-  name: "Alice",
-  age: 25,
-  "favorite color": "blue",
-  country: "USA",
-};
+// const person = {
+//   name: "Alice",
+//   age: 25,
+//   "favorite color": "blue",
+//   country: "USA",
+// };
 
-console.log(person["name"]); // Output: Alice
-console.log(person["age"]); // Output: 25
-console.log(person["favorite color"]); // Output: blue
+// console.log(person["name"]); // Output: Alice
+// console.log(person["age"]); // Output: 25
+// console.log(person["favorite color"]); // Output: blue
 
-// *  Using variable name for the key
-const key = "country";
-console.log(person[key]); // USA
+// // *  Using variable name for the key
+// const key = "country";
+// console.log(person[key]); // USA
+
+// ? Commit 8: adding the property to the object using bracket notation
+
+// const user = {};
+
+// // Adding properties
+// user["full name"] = "Alice Brown"; // ✅ Works with spaces
+// user["email"] = "alice@example.com";
+// user["123number"] = "Special Key";
+
+// console.log(user);

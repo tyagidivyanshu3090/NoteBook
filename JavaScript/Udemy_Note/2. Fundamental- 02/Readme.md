@@ -97,3 +97,5 @@ const person = {
 const property = "name";
 console.log(person[property]); // Output: John
 ```
+
+- Both bracket and dot notation can be used to add the property to the object
