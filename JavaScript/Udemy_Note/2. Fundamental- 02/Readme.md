@@ -68,6 +68,7 @@ const greet = function () {
 - pop(): Removes the last element
 - shift(): Removes the first element
 - indexOf(): Finds the index of an element
+- 😍 In JavaScript, arrays are technically a type of object. That's why using the typeof operator on an array returns "object" instead of "array".
 
 ## 📝 Commit 6: Object in JavaScript
 

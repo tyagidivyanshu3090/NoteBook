@@ -184,34 +184,39 @@
 
 // ? Commit 11: Assignment
 
-let mark = {
-  fullName: "Mark",
-  mass: 78,
-  height: 1.69,
-  calcBMI: function () {
-    this.BMI = this.mass / Math.pow(this.height, 2);
-  },
-};
+// let mark = {
+//   fullName: "Mark",
+//   mass: 78,
+//   height: 1.69,
+//   calcBMI: function () {
+//     this.BMI = this.mass / Math.pow(this.height, 2);
+//   },
+// };
 
-let john = {
-  fullName: "John",
-  mass: 92,
-  height: 1.95,
-  calcBMI: function () {
-    this.BMI = this.mass / Math.pow(this.height, 2);
-  },
-};
+// let john = {
+//   fullName: "John",
+//   mass: 92,
+//   height: 1.95,
+//   calcBMI: function () {
+//     this.BMI = this.mass / Math.pow(this.height, 2);
+//   },
+// };
 
-// Call the methods to calculate BMI
-mark.calcBMI();
-john.calcBMI();
+// // Call the methods to calculate BMI
+// mark.calcBMI();
+// john.calcBMI();
 
-// Accessing the calculated BMI values
-console.log(mark.BMI); // 27.309968138370508
-console.log(john.BMI); // 24.194608809993426
+// // Accessing the calculated BMI values
+// console.log(mark.BMI); // 27.309968138370508
+// console.log(john.BMI); // 24.194608809993426
 
-console.log(
-  john.BMI > mark.BMI
-    ? `John's BMI ${john.BMI} is higher than Mark's ${mark.BMI}`
-    : `Mark's BMI ${mark.BMI} is higher than John's ${john.BMI}`
-);
+// console.log(
+//   john.BMI > mark.BMI
+//     ? `John's BMI ${john.BMI} is higher than Mark's ${mark.BMI}`
+//     : `Mark's BMI ${mark.BMI} is higher than John's ${john.BMI}`
+// );
+
+// ? Commit 12 : typeof operator on array
+
+let array = ["Divyanshu", "22", 123];
+console.log(typeof array); // * object
