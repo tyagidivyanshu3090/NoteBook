@@ -145,3 +145,19 @@
 // // Using a variable
 // const methodName = "say hi";
 // person[methodName](); // Output: Hi there!
+
+// ?: This keyword in Object
+const jonas = {
+  firstName: "Jonas",
+  lastName: "Schmedtmann",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["Michael", "Peter", "Steven"],
+  hasDriversLicense: true,
+  calcAge: function () {
+    console.log(this); // * Represent the object
+    return 2037 - this.birthYear; // Using 'this' to access the property
+  },
+};
+
+console.log(jonas.calcAge()); // Output: 46
