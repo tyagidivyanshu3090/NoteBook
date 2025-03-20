@@ -129,3 +129,19 @@
 // user["123number"] = "Special Key";
 
 // console.log(user);
+
+// ? Commit 9: calling the function in the object using bracket notation
+
+// const person = {
+//   name: "Bob",
+//   "say hi": function () {
+//     console.log("Hi there!");
+//   },
+// };
+
+// // Calling the function
+// person["say hi"](); // Output: Hi there!
+
+// // Using a variable
+// const methodName = "say hi";
+// person[methodName](); // Output: Hi there!
