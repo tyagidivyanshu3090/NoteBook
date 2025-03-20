@@ -146,18 +146,38 @@
 // const methodName = "say hi";
 // person[methodName](); // Output: Hi there!
 
-// ?: This keyword in Object
-const jonas = {
-  firstName: "Jonas",
-  lastName: "Schmedtmann",
-  birthYear: 1991,
-  job: "teacher",
-  friends: ["Michael", "Peter", "Steven"],
-  hasDriversLicense: true,
-  calcAge: function () {
-    console.log(this); // * Represent the object
-    return 2037 - this.birthYear; // Using 'this' to access the property
-  },
-};
+//? Commit 10 : This keyword in Object
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   friends: ["Michael", "Peter", "Steven"],
+//   hasDriversLicense: true,
+//   calcAge: function () {
+//     console.log(this); // * Represent the object
+//     return 2037 - this.birthYear; // Using 'this' to access the property
+//   },
+// };
 
-console.log(jonas.calcAge()); // Output: 46
+// console.log(jonas.calcAge()); // Output: 46
+
+// ? Commit 11: Memoization
+
+// const jonas = {
+//   firstName: "Jonas",
+//   lastName: "Schmedtmann",
+//   birthYear: 1991,
+//   job: "teacher",
+//   calcAge: function () {
+//     this.age = 2037 - this.birthYear; // Store the result as a property
+//     return this.age;
+//   },
+// };
+
+// // Calculate and store age once
+// jonas.calcAge();
+// console.log(jonas.age); // Output: 46
+
+// // No need to recalculate - just access the stored value
+// console.log(jonas.age); // Output: 46
