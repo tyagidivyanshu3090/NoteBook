@@ -218,5 +218,16 @@
 
 // ? Commit 12 : typeof operator on array
 
-let array = ["Divyanshu", "22", 123];
-console.log(typeof array); // * object
+// let array = ["Divyanshu", "22", 123];
+// console.log(typeof array); // * object
+
+// ? Commit 13: Assignment Rolling the dice until 6 is attained
+
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// let roll = 1;
+// while (dice !== 6) {
+//   console.log(`At the ${roll} we have value ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   roll++;
+// }
+// console.log(`At the ${roll} we have value ${dice}`);
