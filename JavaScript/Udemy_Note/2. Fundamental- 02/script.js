@@ -231,3 +231,22 @@
 //   roll++;
 // }
 // console.log(`At the ${roll} we have value ${dice}`);
+
+//? Commit 14: Assignment
+
+// let bills = [22, 295, 176, 440, 34, 105, 10, 1100, 86, 52];
+// let tips = [];
+// let totalValue = [];
+
+// let calcTip = function (data) {
+//   let iteration = 0;
+//   while (iteration < data.length) {
+//     tips.push(bills[iteration] * 0.2);
+//     totalValue.push(bills[iteration] + tips[iteration]);
+//     iteration++;
+//   }
+// };
+
+// calcTip(bills);
+// console.log(tips);
+// console.log(totalValue);
