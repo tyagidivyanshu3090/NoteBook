@@ -40,3 +40,21 @@
 
 - In CommonJS modules, the code runs in non-strict mode by default, but you can enable strict mode manually using "use strict"; at the top of the file.
 - In ES Modules (ESM), the code always runs in strict mode by default, and you don't need to explicitly declare "use strict";.
+
+## 🤔 Notes:
+
+- In CommonJS modules, we use module.exports to export functions, variables, or objects. Initially, module.exports is an empty object ({}).
+
+```js
+console.log(module.exports); // {} -> Empty object
+```
+
+- If we export something using module.exports or exports, the object will no longer be empty.
+
+```js
+module.exports.greet = function () {
+  console.log("Hello!");
+};
+
+console.log(module.exports); // Output: { greet: [Function: greet] }
+```

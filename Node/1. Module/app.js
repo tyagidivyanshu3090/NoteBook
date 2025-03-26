@@ -6,3 +6,4 @@ console.log(firstName);
 console.log(userName);
 
 calcFunction(10, 20);
+console.log(module.exports); //{}
