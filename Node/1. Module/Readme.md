@@ -58,3 +58,7 @@ module.exports.greet = function () {
 
 console.log(module.exports); // Output: { greet: [Function: greet] }
 ```
+
+# Commit 3: Making a folder a module
+
+- To make a folder a module in Node.js, you typically create a folder `[moduleAsFolder]` containing a set of related files (like functions, classes, or utilities) and structure it in a way that allows you to import the folder directly.

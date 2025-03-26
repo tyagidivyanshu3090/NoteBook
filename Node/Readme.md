@@ -21,7 +21,7 @@
   - events: For handling asynchronous events.
   - modules like express, axios, mongoose: For simplifying API calls, database interactions, etc.
 
-# Commit 3:
+# 📝 Commit 3:
 
 ## Installation
 
@@ -72,3 +72,23 @@ console.log(this); // Outputs an empty object {} in Node.js
 - The global object is not part of the V8 engine itself. Instead, it is part of the extended capabilities provided by the browser environment or Node.js (commonly referred to as the "superpowers" of Node.js).
 
 > 🤣 Standard Global Object: Across all JavaScript environments (Node.js, Browser, etc.), the global object can be accessed using: `globalThis`
+
+# 📝 Commit 4
+
+## 😒 Module wrapper function
+
+- In Node.js, every module is wrapped in an `Immediately Invoked Function Expression (IIFE)` before execution. This mechanism is known as the **module wrapper function.**
+- To access the function and variable of the module we need to use `module.exports`
+
+```js
+(function (exports, require, module, __filename, __dirname) {
+  // Your module code here
+});
+```
+
+## Steps: When a Node.js file is executed, it goes through the following steps internally:
+
+- **Loading the Module** Node.js reads the module code from the file.
+- **Wrapping in an IIFE**
+- **Execution** The function is immediately invoked, isolating the module's scope.
+- **Caching** The module is cached, so subsequent require() calls use the cached version.
