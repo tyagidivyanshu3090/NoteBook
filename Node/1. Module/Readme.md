@@ -18,3 +18,25 @@
 - we use `module.exports` and `require` function
   - module.exports to explicitly export variables, functions, or objects from a module.
   - require() to import those exported elements into another file.
+
+## 🤔 In the ES Module:
+
+- In ES Modules (ESM), if you want to use import and export syntax in a Node.js environment, you need to set the **"type": "module"** property in your package.json file
+- `File Extensions:` Always include .js or .mjs in import paths to avoid issues.
+- **If "type": "module" is not set, Node.js assumes CommonJS by default.**
+- In the ES module we have 2 type
+  - `Named export and import:` use of curly bracket while importing
+    - In named imports, the name of the function or variable must match exactly as it was defined during export. If there's a mismatch, it will result in an error.
+  - `Default export`: A module can have only one default export.
+    - `Default Import`: No use of curly bracket
+
+## 🤔 Notes:
+
+- In CommonJS modules, when we use `require()` to import a module, it is done synchronously — meaning the code waits for the module to load before continuing.
+- In ES Modules (ESM), the `import and export statements` are `asynchronous` and can take advantage of JavaScript's asynchronous capabilities.
+  - However, static imports (import { x } from 'module') still execute synchronously, while dynamic imports (import('module')) are asynchronous.
+
+## 🤔 Notes:
+
+- In CommonJS modules, the code runs in non-strict mode by default, but you can enable strict mode manually using "use strict"; at the top of the file.
+- In ES Modules (ESM), the code always runs in strict mode by default, and you don't need to explicitly declare "use strict";.
