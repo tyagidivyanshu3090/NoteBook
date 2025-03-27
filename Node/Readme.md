@@ -1,4 +1,4 @@
-# Commit 1
+# 📝 Commit 1
 
 - **Any application written in JavaScript will eventually be written in JavaScript.**
 - **Node.js:** A JavaScript runtime environment built over the `V8 engine` of Chrome. Developed by `Rahn Dahl` @2009.
@@ -9,7 +9,7 @@
   - Based on an event-driven architecture
   - Capable of asynchronous I/O (also known as non-blocking I/O)
 
-# Commit 2
+# 📝 Commit 2
 
 - The js Engine [ V8 ] which is used to execute javaScript is written in C++ Language.
 - Node.js = V8 Engine + Extra Superpowers 🚀
@@ -92,3 +92,27 @@ console.log(this); // Outputs an empty object {} in Node.js
 - **Wrapping in an IIFE**
 - **Execution** The function is immediately invoked, isolating the module's scope.
 - **Caching** The module is cached, so subsequent require() calls use the cached version.
+
+# 📝 Commit 5: Understanding require() in Node.js
+
+## 🤔 Overview
+
+- require() is used in Node.js to import modules. When a module is required, Node.js goes through a series of steps to resolve, load, execute, and cache the module.
+
+## 🤔 Steps Involved in require()
+
+- **Resolving the module:** Node.js determines the module type (built-in, external package, JSON, or local file).
+
+  - Built-in modules (fs, path, etc.).
+  - node_modules folder for third-party packages.
+  - Absolute or relative file paths (./module.js, ../module.js).
+
+- **Loading the module:** Once resolved, Node reads the module’s source code.
+
+  - .js → Treated as JavaScript.
+  - .json → Parsed into an object.
+  - .node → Compiled native add-ons.
+
+- **Wraps the module in IIFE:** Node wraps the module’s code inside an Immediately Invoked Function Expression (IIFE) to provide isolation.
+- **Evaluation:** i.e. module.exports is returned
+- **Caching:** Node caches the module in require.cache to prevent reloading and re-executing the same module multiple times. If require() is called again for the same module, the cached version is returned instead of reloading.
