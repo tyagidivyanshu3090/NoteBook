@@ -116,3 +116,30 @@ console.log(this); // Outputs an empty object {} in Node.js
 - **Wraps the module in IIFE:** Node wraps the module’s code inside an Immediately Invoked Function Expression (IIFE) to provide isolation.
 - **Evaluation:** i.e. module.exports is returned
 - **Caching:** Node caches the module in require.cache to prevent reloading and re-executing the same module multiple times. If require() is called again for the same module, the cached version is returned instead of reloading.
+
+# 📝 Commit 6: Understanding libuv in Node.js
+
+- JavaScript is single threaded synchronous language. 🧐 So how asynchronous code is executed?
+  - It is the super power of Node.js which provides the asynchronous function to the javaScript. These super power of Node.js is present in the library **libuv** 🐉.
+    - Node.js gets its asynchronous capabilities from `libuv` — a powerful library that enables non-blocking operations by working with the operating system.
+
+## 🛠 How it Works?
+
+- When the V8 JavaScript engine encounters an asynchronous operation (like setTimeout, file reading, or a network request), it does not execute it immediately.
+- Instead, it hands over the task to libuv, which manages the operation in the background. libuv interacts with the operating system to perform the task asynchronously. Once the task is completed, libuv notifies Node.js, which then executes the callback function associated with that task.
+  - libuv contains `thread pool`, `event loop`, `I/O Queue`
+
+## 🏗 Components of libuv
+
+- libuv consists of several key components:
+  - Event Loop 🌀 → Continuously checks if there are pending tasks that need to be executed.
+  - Thread Pool 🔄 → Used for heavy tasks like file system operations and cryptography, running them in parallel.
+  - I/O Queue 📩 → Manages input/output operations efficiently, ensuring they don’t block the main thread.
+
+# 📒 Notes
+
+- As discussed the maximum code of v8 is written in C++ language
+- Node.js = V8 Engine + Additional Features (Superpowers)
+  - One of the super Power of Node.js is to handle the asynchronous code through `libuv library`
+  - The code of Node.js -> written in javaScript (61%)
+  - The code of libuv is written in C-language.
