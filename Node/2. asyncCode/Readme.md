@@ -6,7 +6,7 @@
 
 - require() is a built-in function in Node.js used to import modules.
 - 'fs' is the File System module in Node.js, which provides functions for interacting with the file system (reading, writing, updating files, etc.).
-- **require** function runs in the synchronous mode
+- **_require_** function runs in the synchronous mode
 
 ```js
 const fs = require("fs");
@@ -58,3 +58,5 @@ try {
 
 - The first parameter (err) represents the error (if any occurs).
 - The second parameter (data) contains the result if there was no error.
+
+# Commit 3: Understanding the Crypto
