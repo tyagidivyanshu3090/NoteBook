@@ -56,3 +56,21 @@ An Execution Context is made up of two main parts:
 - Call stack maintains the order of execution of execution contexts.
 - call stack aka
   - Execution context stack or Program stack or Runtime stack or Machine stack
+
+# 📝 Commit 3: Hoisting
+
+- Hoisting in JavaScript is a behavior where variable and function declarations are moved to the top of their scope before the code is executed. This means that you can use functions and variables before you declare them in the code (sort of), because JavaScript will "hoist" those declarations.
+
+## Note:
+
+- var is hoisted and initialized as undefined → you can access it, but it's undefined.
+- let and const are hoisted, but not initialized → accessing them before the declaration line gives a `ReferenceError`.
+- function declarations are fully hoisted, so you can call them before they're defined.
+- Function expressions (especially with var) are hoisted as undefined.
+- Arrow function not hoisted declared with keyword let and const but if declared with the var -> the name of arrow function is hoisted but we cant call them
+
+```js
+sum(); // Error:  TypeError
+console.log(sum); // Undefined
+var sum = () => console.log("Sum function called");
+```
