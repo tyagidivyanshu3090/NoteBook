@@ -50,3 +50,9 @@ An Execution Context is made up of two main parts:
 - The call stack manages the order of function execution.
 - Each new function call adds a new execution context to the stack.
 - Once the function finishes executing, its context is popped off the stack.
+
+### 🧠 call Stack
+
+- Call stack maintains the order of execution of execution contexts.
+- call stack aka
+  - Execution context stack or Program stack or Runtime stack or Machine stack
