@@ -31,6 +31,9 @@ function handleClick() {
     }
   } else if (guessNumber === secretNumber) {
     document.querySelector(".message").textContent = "🎉 Correct";
+    // ? when player wins the game the background is green
+    document.querySelector("body").style.backgroundColor = "#60B347";
+    document.querySelector(".number").style.width = "30rem";
   } else if (guessNumber > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📈 Number is Too High";
