@@ -7,3 +7,6 @@
   - CSS selector: `#` for the id and `dot` for the class
 
 ## textContent()
+
+- Gets or sets just the plain text inside an element.
+- It ignores HTML tags.
