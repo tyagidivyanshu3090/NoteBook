@@ -10,6 +10,7 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
 //? Getting the score -> which is decreased for every wrong guess
 let score = 20;
+let highScore = 0;
 
 function handleClick() {
   const guessNumber = Number(document.querySelector(".guess").value);
@@ -34,6 +35,10 @@ function handleClick() {
     document.querySelector("body").style.backgroundColor = "#60B347";
     document.querySelector(".number").style.width = "30rem";
     document.querySelector(".number").textContent = secretNumber;
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(".highscore").textContent = highScore;
+    }
   } else if (guessNumber > secretNumber) {
     if (score > 1) {
       document.querySelector(".message").textContent = "📈 Number is Too High";
@@ -58,12 +63,11 @@ document.querySelector(".check").addEventListener("click", handleClick);
 
 document.querySelector(".again").addEventListener("click", () => {
   score = 20;
-  document.querySelector(".message").textContent = "Start guessing ..";
-  const secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector(".message").textContent = "Start guessing ...";
   document.querySelector(".number").textContent = "?";
   document.querySelector(".score").textContent = score;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
   document.querySelector(".guess").value = "";
-  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector("body").style.backgroundColor = "#222222";
   document.querySelector(".number").style.width = "15rem";
 });
