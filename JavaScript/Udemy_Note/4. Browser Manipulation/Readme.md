@@ -10,3 +10,13 @@
 
 - Gets or sets just the plain text inside an element.
 - It ignores HTML tags.
+
+## Math.trunc vs Math.floor
+
+## textContent() vs innerHTML()
+
+### Note: DRY PRINCIPLE
+
+- `Script2.js` is the original code with all cases
+- `Script1.js` is refactored code => adhering to DRY principle [ Condense code ]
+  - We can also do the refactoring of code using the`function`: Hence we have created a displayMessage function which
