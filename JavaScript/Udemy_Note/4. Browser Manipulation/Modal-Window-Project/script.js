@@ -11,8 +11,9 @@ const btnCloseModal = document.querySelector("close-modal");
 // Applying the event Listener to each btn -> Using forEach Loop or we can use for loop
 btnsOpenModal.forEach((item, index) => {
   item.addEventListener("click", () => {
-    console.log(`button clicked ${index + 1}`);
-    console.log(`${item.textContent}`);
+    // Applying the classList Property to add or remove the modal
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
   });
 });
 
