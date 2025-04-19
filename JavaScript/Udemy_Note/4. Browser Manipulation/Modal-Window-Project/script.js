@@ -24,13 +24,11 @@ btnsOpenModal.forEach((item, index) => {
 */
 
 // ? Implementing the close button functionality on the modal
-
-btnCloseModal.addEventListener("click", function () {
+function closeModal() {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
-});
+}
 
-overlay.addEventListener("click", function () {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-});
+btnCloseModal.addEventListener("click", closeModal);
+
+overlay.addEventListener("click", closeModal);
