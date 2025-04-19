@@ -6,7 +6,7 @@ const btnsOpenModal = document.querySelectorAll(".show-modal");
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-const btnCloseModal = document.querySelector("close-modal");
+const btnCloseModal = document.querySelector(".close-modal");
 
 // Applying the event Listener to each btn -> Using forEach Loop or we can use for loop
 btnsOpenModal.forEach((item, index) => {
@@ -22,3 +22,15 @@ btnsOpenModal.forEach((item, index) => {
         console.log(btnsOpenModal[i].textContent);
     }
 */
+
+// ? Implementing the close button functionality on the modal
+
+btnCloseModal.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
+
+overlay.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+});
