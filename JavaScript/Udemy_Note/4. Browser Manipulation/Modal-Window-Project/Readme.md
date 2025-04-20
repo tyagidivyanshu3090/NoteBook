@@ -20,3 +20,9 @@
 modal.classList.remove("hidden"); // Correct ✅
 modal.classList.add("active"); // Correct ✅
 ```
+
+### Note: DRY PRINCIPLE
+
+- `Script2.js` is the original code with all cases
+- `Script1.js` is refactored code => adhering to DRY principle [ Condense code ]
+  - We can also do the refactoring of code using the`function`: Hence we have created a displayMessage function which
