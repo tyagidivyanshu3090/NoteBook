@@ -18,13 +18,13 @@ const scores = [0, 0]; // Since array is zero based index -> hence we have 2 pla
 // Creating the variable so that after finishing the game -> so button is accessible
 let playing = true;
 
-// Implementing the initial condition
-score0El.textContent = scores[0];
-score1El.textContent = scores[1];
-diceEl.classList.add("hidden");
-let currentScore = 0;
+// // Implementing the initial condition
+// score0El.textContent = scores[0];
+// score1El.textContent = scores[1];
+// diceEl.classList.add("hidden");
+// let currentScore = 0;
 
-// ? Dry Principle: switchPlayer
+// ? Dry Principle: for hold button -> switchPlayer
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -33,6 +33,37 @@ const switchPlayer = function () {
   player0El.classList.toggle("player--active");
   player1El.classList.toggle("player--active");
 };
+
+// ? Dry Principle: for the New game -> setting game to fresh start
+function init() {
+  // 1. set the current Score of player 1 and player 2 = 0
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  // 2. Hide the dice
+  diceEl.classList.add("hidden");
+  // 3. set the score as 0. [ Setting the variable to initial value ]
+  scores[0] = 0;
+  scores[1] = 0;
+  // Implementing the initial condition
+  score0El.textContent = scores[0];
+  score1El.textContent = scores[1];
+  diceEl.classList.add("hidden");
+  let currentScore = 0;
+
+  // 4. setting the current score to 0
+
+  console.log(current0El);
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  // 5. Remove the winner class from both the player
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  // 6. adding the active class to the player 1 and removing to player 2
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+}
 
 // * Implementing the rolling the dice functionality
 btnRoll.addEventListener("click", function () {
@@ -94,3 +125,6 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
+
+// ? Implementing the New game functionality
+btnNew.addEventListener("click", init);
