@@ -15,12 +15,6 @@
 
 ## textContent() vs innerHTML()
 
-### Note: DRY PRINCIPLE
-
-- `Script2.js` is the original code with all cases
-- `Script1.js` is refactored code => adhering to DRY principle [ Condense code ]
-  - We can also do the refactoring of code using the`function`: Hence we have created a displayMessage function which
-
 # 📚 classList Property
 
 - The classList property is used in JavaScript to add, remove, or toggle CSS classes on an HTML element.
@@ -31,4 +25,19 @@
 ```js
 modal.classList.remove("hidden"); // Correct ✅
 modal.classList.add("active"); // Correct ✅
+```
+
+# For selecting the element by ID:
+
+- `getElementbyId('')`: You only write the ID name, no # symbol. It is faster method
+
+```js
+const element = document.getElementById("myId");
+```
+
+- `querySelector('#')`: You must use the # symbol before the ID name (because it's a CSS selector).
+  - querySelector is more flexible — you can also select classes (.), tags (div), or complex combinations.
+
+```js
+const element = document.querySelector("#myId");
 ```
