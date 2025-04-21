@@ -15,6 +15,9 @@ let btnHold = document.querySelector(".btn--hold");
 let activePlayer = 0;
 const scores = [0, 0]; // Since array is zero based index -> hence we have 2 players  with id as current--0 & current--1
 
+// Creating the variable so that after finishing the game -> so button is accessible
+let playing = true;
+
 // Implementing the initial condition
 score0El.textContent = scores[0];
 score1El.textContent = scores[1];
@@ -33,34 +36,36 @@ const switchPlayer = function () {
 
 // * Implementing the rolling the dice functionality
 btnRoll.addEventListener("click", function () {
-  // 1. Generate a radom dice roll
-  // 2. Display the dice on screen
-  // 3. check if the rolled value is 1 -> if true, switch to next player
-  // 4. else add the rolled value to currentScore of player
+  if (playing) {
+    // 1. Generate a radom dice roll
+    // 2. Display the dice on screen
+    // 3. check if the rolled value is 1 -> if true, switch to next player
+    // 4. else add the rolled value to currentScore of player
 
-  const dice = Math.trunc(Math.random() * 6) + 1;
-  diceEl.classList.remove("hidden");
-  // Adding the dice image to the src element of img tag
-  diceEl.src = `dice-${dice}.png`;
-  if (dice !== 1) {
-    // Not equal to 1 -> add dice value to currentScore
-    currentScore += dice;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    // Switch to next player but before that:
-    // 1. assigning the value of currentScore and earlier score to the display
-    // 2. setting the currentScore of prev player to zero
-    // Update the total score before switching
-    scores[activePlayer] += currentScore;
-
-    // Correct way to update the score on screen
-    if (activePlayer === 0) {
-      score0El.textContent = scores[0];
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    diceEl.classList.remove("hidden");
+    // Adding the dice image to the src element of img tag
+    diceEl.src = `dice-${dice}.png`;
+    if (dice !== 1) {
+      // Not equal to 1 -> add dice value to currentScore
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
     } else {
-      score1El.textContent = scores[1];
+      // Switch to next player but before that:
+      // 1. assigning the value of currentScore and earlier score to the display
+      // 2. setting the currentScore of prev player to zero
+      // Update the total score before switching
+      scores[activePlayer] += currentScore;
+
+      // Correct way to update the score on screen
+      if (activePlayer === 0) {
+        score0El.textContent = scores[0];
+      } else {
+        score1El.textContent = scores[1];
+      }
+      switchPlayer();
     }
-    switchPlayer();
   }
 });
 
@@ -69,20 +74,22 @@ btnHold.addEventListener("click", function () {
   // 1. Add the current score to the active player score & display on the screen
   // 2. Check score is >=100 -> if yes, end/Finish the game
   // 3. Switch to next player
-
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  if (scores[activePlayer] >= 20) {
-    // It means current player has won so we need to add the class of winner
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add("player--winner");
-    // Removing the active class
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove("player--active");
-  } else {
-    switchPlayer();
+  if (playing) {
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    if (scores[activePlayer] >= 20) {
+      playing = false;
+      // It means current player has won so we need to add the class of winner
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
+      // Removing the active class
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player--active");
+    } else {
+      switchPlayer();
+    }
   }
 });
