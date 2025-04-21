@@ -21,6 +21,16 @@ score1El.textContent = scores[1];
 diceEl.classList.add("hidden");
 let currentScore = 0;
 
+// ? Dry Principle: switchPlayer
+
+const switchPlayer = function () {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0; // Shifting the active player
+  currentScore = 0;
+  player0El.classList.toggle("player--active");
+  player1El.classList.toggle("player--active");
+};
+
 // * Implementing the rolling the dice functionality
 btnRoll.addEventListener("click", function () {
   // 1. Generate a radom dice roll
@@ -50,10 +60,29 @@ btnRoll.addEventListener("click", function () {
     } else {
       score1El.textContent = scores[1];
     }
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0; // Shifting the active player
-    currentScore = 0;
-    player0El.classList.toggle("player--active");
-    player1El.classList.toggle("player--active");
+    switchPlayer();
+  }
+});
+
+// ? Hold button functionality
+btnHold.addEventListener("click", function () {
+  // 1. Add the current score to the active player score & display on the screen
+  // 2. Check score is >=100 -> if yes, end/Finish the game
+  // 3. Switch to next player
+
+  scores[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+  if (scores[activePlayer] >= 20) {
+    // It means current player has won so we need to add the class of winner
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add("player--winner");
+    // Removing the active class
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("player--active");
+  } else {
+    switchPlayer();
   }
 });
