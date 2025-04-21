@@ -1,6 +1,12 @@
 "use strict";
 
-// * Implementing the intial condition where the score is zero for player 1 and player 2
+// * Selecting the intial element to implement initial condition
 
-let score1 = document.querySelector("#score--0");
-let score2 = document.getElementById("score--1");
+let score0El = document.querySelector("#score--0");
+let score1El = document.getElementById("score--1");
+let diceEl = document.querySelector(".dice");
+
+// Implementing the initial condition
+score0El.textContent = 0;
+score1El.textContent = 0;
+diceImg.classList.add("hidden");
