@@ -80,6 +80,7 @@ btnHold.addEventListener("click", function () {
       scores[activePlayer];
     if (scores[activePlayer] >= 20) {
       playing = false;
+      diceEl.classList.add("hidden");
       // It means current player has won so we need to add the class of winner
       document
         .querySelector(`.player--${activePlayer}`)
