@@ -24,3 +24,9 @@
 // console.log(restaurantName); // 'Classico Italiano'
 // console.log(hours); // { fri: {...}, sat: {...} }
 // console.log(tags); // ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']
+
+//?  Setting Default Values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+
+console.log(menu); // [] (default value because 'menu' doesn't exist)
+console.log(starters); // Undefined unless `starterMenu` exists in restaurant
