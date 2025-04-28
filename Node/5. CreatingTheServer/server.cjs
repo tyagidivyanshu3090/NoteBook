@@ -8,9 +8,13 @@ const http = require("node:http");
 // 'req' = incoming request object (client details)
 // 'res' = outgoing response object (what we will send back)
 const server = http.createServer(function (req, res) {
+  if (req.url === "/getSecretData") {
+    res.end("There is no secret data");
+    return;
+  }
   // 3. Send the final response to the client and end the request
   // 'res.end()' sends the response data and closes the TCP connection
-  res.end("Hello, this is my first Node.js HTTP server!🧐");
+  res.end("Hello, this is my first Node.js HTTP server!🧐 ");
 });
 
 // 4. Start the server and make it listen on port 777
