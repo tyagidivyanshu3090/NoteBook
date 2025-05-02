@@ -11,3 +11,8 @@
 const connectionString =
   "mongodb+srv://NamasteDev:<db_password>@namastenode.4ffvfwu.mongodb.net/?retryWrites=true&w=majority&appName=NamasteNode";
 ```
+
+# Making connection btw Node application and Mongodb
+
+- Install the npm package of the mongodb
+- import the mongodb package using require function
