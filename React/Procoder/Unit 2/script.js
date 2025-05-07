@@ -7,12 +7,18 @@
 // );
 
 // * Creating the multiple parent-child react element -> Using the array Object
-const h2 = React.createElement("h2", { className: "subHeading" }, [
+const h2 = React.createElement("div", { className: "parent" }, [
   React.createElement(
     "div",
-    { className: "subHeading" },
+    { className: "child1", key: 2 },
     "This is the child Element"
   ),
+  React.createElement("img", {
+    className: "child2",
+    key: 3,
+    src: "/1.png",
+    style: { width: "200px" },
+  }),
 ]);
 
 console.log(h2);
