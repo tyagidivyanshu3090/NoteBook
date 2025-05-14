@@ -20,3 +20,11 @@ npm install express
 ```
 
 - Code written in src/app.js
+
+# Installed the nodemon:
+
+- nodemon is a tool that automatically restarts your Node.js application whenever it detects changes in your code files.
+
+```bash
+sudo npm install -g nodemon
+```

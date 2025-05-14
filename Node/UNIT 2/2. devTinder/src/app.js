@@ -3,8 +3,12 @@ const app = express(); // 👉 You're creating an Express app. Think of it as yo
 
 const PORT = 3000; // Set the port number
 
-app.use(function (req, res) {
-  res.send("Hello from the server");
+app.get("/", function (req, res) {
+  res.send("Hello from the server. This is Landing page");
+});
+
+app.get("/about", function (req, res) {
+  res.send("Hello from the server. This is about us page");
 });
 
 // Start the server
