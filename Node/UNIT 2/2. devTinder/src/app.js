@@ -21,6 +21,13 @@ app.delete("/user", (req, res) => {
   res.send("Data is deleted from the dataBase");
 });
 
+app.post("/user/:id", (req, res) => {
+  // Data deleteed from the db
+  const { id } = req.params;
+  console.log(id);
+  res.send(`the user id is ${id}`);
+});
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

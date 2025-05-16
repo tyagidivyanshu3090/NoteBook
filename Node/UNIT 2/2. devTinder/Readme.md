@@ -54,3 +54,8 @@ app.get("/ab+cd", (req, res) => {
 
 - In a route path like /ab+cd:
   - The + means: "one or more of the character before it". So b+ means: at least one b must be there
+
+# Difference btw req.param vs req.query
+
+- req.params: used for URL path (e.g., /user/:id)
+- req.query: used for Query string (e.g., ?q=abc)
