@@ -28,3 +28,9 @@ npm install express
 ```bash
 sudo npm install -g nodemon
 ```
+
+- To run the application using the nodeman:
+
+```bash
+nodeman ${fileName}
+```
