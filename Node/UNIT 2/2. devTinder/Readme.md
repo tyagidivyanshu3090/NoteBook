@@ -45,3 +45,12 @@ app.post("/us?er", (req, res) => {
 ```
 
 - In Express route paths: ? means "the character before it is optional" So /us?er matches both /user and /uer It does not make s mandatory — it makes it optional
+
+```js
+app.get("/ab+cd", (req, res) => {
+  res.send("Matched route!");
+});
+```
+
+- In a route path like /ab+cd:
+  - The + means: "one or more of the character before it". So b+ means: at least one b must be there
