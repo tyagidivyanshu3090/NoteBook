@@ -34,3 +34,14 @@ sudo npm install -g nodemon
 ```bash
 nodeman ${fileName}
 ```
+
+# Routing takeaways"
+
+```js
+app.post("/us?er", (req, res) => {
+  // This route will respond to both '/user' and '/uer'
+  res.send("Matched route!");
+});
+```
+
+- In Express route paths: ? means "the character before it is optional" So /us?er matches both /user and /uer It does not make s mandatory — it makes it optional
