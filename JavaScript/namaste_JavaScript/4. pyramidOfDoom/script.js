@@ -11,7 +11,7 @@
 const cart = ["apple", "Mango", "shampoo"];
 
 const promise = createOrder(cart);
-
+console.log(promise); // logging the promise state to check whether is pending or fulfiled state
 // .then method is called on the promise when it is populated with data or promise is fulfilled by createOrder function
 promise
   .then((orderId) => {
@@ -29,9 +29,11 @@ promise
 function createOrder(cart) {
   return new Promise(function (resolve, reject) {
     setTimeout(() => {
-      if (!cart.length) {
+      if (cart.length) {
+        setTimeout(() => {
+          resolve("ORDER_Id_123");
+        }, 6000);
         // if cart is valid we make a db call and return the orderID. for time being keeping ID const
-        resolve("ORDER_Id_123");
       } else {
         //
         const err = new Error("Cart is not valid or empty");
