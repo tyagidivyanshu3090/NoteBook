@@ -18,6 +18,12 @@ promise
     // proceedToPayment(orderId);
     console.log(orderId);
   })
+  .then((orderId) => {
+    proceedToPayment(orderId);
+  })
+  .then((response) => {
+    console.log(response);
+  })
   .catch((err) => console.log(err.message));
 
 /*
@@ -40,5 +46,11 @@ function createOrder(cart) {
         reject(err);
       }
     }, 500);
+  });
+}
+
+function proceedToPayment(orderId) {
+  return new Promise((resolve, reject) => {
+    resolve("Payment is done");
   });
 }
