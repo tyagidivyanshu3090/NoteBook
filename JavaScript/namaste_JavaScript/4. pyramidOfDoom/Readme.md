@@ -13,3 +13,5 @@
 
 - ## Promise api
   - `script5.js`: Promise.all([])
+  - `script6.js`: Promise.allSettled([])
+  - `script7.js`: Promise.race([])
