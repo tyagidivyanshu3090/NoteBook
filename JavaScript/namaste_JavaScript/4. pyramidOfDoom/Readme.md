@@ -7,5 +7,9 @@
     - Asynchrony: Schedule work to happen after I/O, timers, or user events
 
 - ## Problem with the callBack function:
+
   - Inversion of control
   - Pyramid of doom
+
+- ## Promise api
+  - `script5.js`: Promise.all([])
