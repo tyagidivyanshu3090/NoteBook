@@ -13,3 +13,8 @@ Promise.allSettled([p1, p2, p3]).then((results) => {
     }
   });
 });
+
+// ? other way to console.log: In the code we have used the shorthand notation as described in the notes + we have not use the bracket for logging the resullt which then method received.
+/*
+ * Promise.allSettled([p1, p2, p3]).then(console.log);
+ */
