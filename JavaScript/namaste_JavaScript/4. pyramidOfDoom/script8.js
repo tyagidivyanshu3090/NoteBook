@@ -14,14 +14,18 @@
 //   .then(console.log) // "P2 success" after 2 sec
 //   .catch(console.error);
 
-//? Promise.any rejection -> all
+// ? Promise.any rejection -> all
 // * Loging the aggregate error
 
-// const p1 = new Promise((_, rej) =>
-//   setTimeout(() => rej("Promise_1 rejected"), 1000)
-// );
-// const p2 = new Promise((_, rej) =>
-//   setTimeout(() => rej("Promise_2 rejected"), 3000)
-// );
+const p1 = new Promise((_, rej) =>
+  setTimeout(() => rej("Promise_1 rejected"), 1000)
+);
+const p2 = new Promise((_, rej) =>
+  setTimeout(() => rej("Promise_2 rejected"), 3000)
+);
 
-// Promise.any([p1, p2]).then(console.log).catch(console.log);
+Promise.any([p1, p2])
+  .then(console.log)
+  .catch((err) => {
+    console.log(err.errors);
+  });
