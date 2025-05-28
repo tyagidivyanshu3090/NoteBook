@@ -29,3 +29,30 @@
 
 // // Call greet with person as `this`, and "Hello" and "!" as arguments
 // greet.call(person, "Hello", "!");
+
+// ! apply method
+
+function printFullNameWithHometown(hometown, district) {
+  console.log(
+    this.firstName +
+      " " +
+      this.lastName +
+      " from " +
+      hometown +
+      " @ " +
+      district
+  );
+}
+
+const person1 = {
+  firstName: "Akshay",
+  lastName: "Kumar",
+};
+
+const person2 = {
+  firstName: "Sachin",
+  lastName: "Tendulkar",
+};
+
+printFullNameWithHometown.apply(person1, ["Delhi"]); // Output: Akshay Kumar from Delhi
+printFullNameWithHometown.apply(person2, ["Mumbai"]); // Output: Sachin Tendulkar from Mumbai
