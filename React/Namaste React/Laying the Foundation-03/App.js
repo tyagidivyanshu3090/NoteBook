@@ -4,16 +4,19 @@ import ReactDOM from "react-dom/client";
 const HeadingComponent = () => {
   return (
     <div>
-      <h1> Namaste React Functional Component </h1>
-      <h2> Namaste React Functional Component </h2>
+      <h1> Name : Divyanshu Tyagi </h1>
+      <h2> Occupation: Software Developer </h2>
     </div>
   );
 };
 
 const HeadingComponent2 = () => (
   <div>
-    <h1> Namaste React Functional Component </h1>
-    <h2> Namaste React Functional Component </h2>
+    <HeadingComponent />
+    <h3> Office: National Data Center </h3>
+    {/* Infusing the javaScript inside the jsx */}
+    {console.log("Hello wolrd")}
+    <h4> Unit: Namaste React Functional Component </h4>
   </div>
 );
 
