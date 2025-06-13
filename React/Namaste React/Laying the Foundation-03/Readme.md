@@ -19,3 +19,19 @@
 - **Methods to create React element?**
   - Using `React.createElement()` : as done in lecture 1
   - Using JSX as done in app.js file
+
+## App2.js
+
+- Calling Components in Three Different Ways:
+
+```js
+// 1. JSX syntax
+<Title />
+
+// 2. JSX self-closing
+
+<Title></Title>
+
+// 3. Function call
+{Title()}
+```
