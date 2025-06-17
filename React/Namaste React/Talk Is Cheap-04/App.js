@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Logo from "./asset/AppLogo.jpg";
-console.log(Logo); // This should print a blob or asset path
 
 const Header = () => {
   return (
@@ -25,7 +24,6 @@ const AppLayout = () => {
   let x = 10;
   return (
     <div className="app">
-      {console.log("Logo:", Logo)}
       <Header />
     </div>
   );
