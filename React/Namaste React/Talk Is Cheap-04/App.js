@@ -1,18 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Logo from "./asset/Food_Logo.jpeg";
+import Logo from "./asset/AppLogo.jpg";
 console.log(Logo); // This should print a blob or asset path
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        {/* <img src={Logo} alt="Food Logo" width="200" /> */}
-        <img
-          src={require("./asset/Food_Logo.jpeg")}
-          alt="Food Logo"
-          width="200"
-        />
+        <img src="https://i.pinimg.com/736x/b1/fc/bb/b1fcbbfd4fb8116c714ef352bb39bbaf.jpg" />
       </div>
       <div className="nav-items">
         <ul>
