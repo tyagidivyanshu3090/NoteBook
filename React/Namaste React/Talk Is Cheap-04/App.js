@@ -2,6 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Logo from "./asset/AppLogo.jpg";
 
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">
+        <input type="text" />
+      </div>
+      <div className="restaurant-container">
+        {/*  Restaurant Card -> Reused */}
+      </div>
+    </div>
+  );
+};
+
 const Header = () => {
   return (
     <div className="header">
