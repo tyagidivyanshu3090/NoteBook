@@ -2,7 +2,49 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Logo from "./asset/AppLogo.jpg";
 
-const RestaurantCard = () => {
+const resData = {
+  id: "618037",
+  name: "Jai Ganesh Bhojnalaya",
+  cloudinaryImageId: "yzgqriufpzmloogcn2vl",
+  locality: "Railway Colony",
+  areaName: "Bus stand",
+  costForTwo: "₹200 for two",
+  cuisines: ["North Indian", "South Indian", "Indian", "Chinese"],
+  avgRating: 4.1,
+  veg: true,
+  parentId: "368432",
+  avgRatingString: "4.1",
+  totalRatingsString: "403",
+  sla: {
+    deliveryTime: 48,
+    lastMileTravel: 12.1,
+    serviceability: "SERVICEABLE",
+    slaString: "45-50 mins",
+    lastMileTravelString: "12.1 km",
+    iconType: "ICON_TYPE_EMPTY",
+  },
+  availability: {
+    nextCloseTime: "2025-06-17 23:00:00",
+    opened: true,
+  },
+  badges: {
+    imageBadges: [
+      {
+        imageId: "v1695133679/badges/Pure_Veg111.png",
+        description: "pureveg",
+      },
+    ],
+  },
+  isOpen: true,
+  aggregatedDiscountInfoV2: {},
+  type: "F",
+};
+
+const RestaurantCard = (resData) => {
+  console.log(resData.resData);
+  const { name, cuisines, avgRating, costForTwo, sla } = resData.resData;
+  const cuisine = cuisines.join(", ");
+  const { deliveryTime } = sla;
   return (
     <div className="rest-card">
       <img
@@ -10,10 +52,11 @@ const RestaurantCard = () => {
         alt="res-logo"
         className="res-logo"
       />
-      <h2> Meghna Foods </h2>
-      <h3> Briyani, North Indian, Asian</h3>
-      <h4> 4.3 ⭐️</h4>
-      <h4> 38 minutes</h4>
+      <h2> {name} </h2>
+      <h3> {cuisine} </h3>
+      <h4> {avgRating} ⭐️</h4>
+      <h4>{costForTwo}</h4>
+      <h4> {deliveryTime} minutes</h4>
     </div>
   );
 };
@@ -26,7 +69,8 @@ const Body = () => {
       </div>
       <div className="restaurant-container">
         {/*  Restaurant Card -> Reused */}
-        <RestaurantCard />
+        <RestaurantCard resData={resData} />
+        {/* <RestaurantCard resName="KFC" cuisine="FastFood" /> */}
       </div>
     </div>
   );
