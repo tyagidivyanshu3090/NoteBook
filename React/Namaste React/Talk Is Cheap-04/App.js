@@ -42,13 +42,18 @@ const resData = {
 
 const RestaurantCard = (resData) => {
   console.log(resData.resData);
-  const { name, cuisines, avgRating, costForTwo, sla } = resData.resData;
+  const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
+    resData.resData;
+
+  const ImgUrl =
+    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+
   const cuisine = cuisines.join(", ");
   const { deliveryTime } = sla;
   return (
     <div className="rest-card">
       <img
-        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/jo9pdipf4elcuch8g55q"
+        src={`${ImgUrl}${cloudinaryImageId}`}
         alt="res-logo"
         className="res-logo"
       />
