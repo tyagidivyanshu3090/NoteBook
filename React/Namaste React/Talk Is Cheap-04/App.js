@@ -43,7 +43,7 @@ const resData = {
 const RestaurantCard = (resData) => {
   console.log(resData.resData);
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
-    resData.resData;
+    resData?.resData;
 
   const ImgUrl =
     "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
