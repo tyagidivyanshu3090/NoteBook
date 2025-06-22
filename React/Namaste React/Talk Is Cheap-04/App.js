@@ -54,13 +54,17 @@ const RestaurantCard = (resData) => {
     <div className="rest-card">
       <img
         src={`${ImgUrl}${cloudinaryImageId}`}
+        // src={
+        //   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+        //   cloudinaryImageId
+        // }
         alt="res-logo"
         className="res-logo"
       />
       <h2> {name} </h2>
       <h3> {cuisine} </h3>
       <h4> {avgRating} ⭐️</h4>
-      <h4>{costForTwo}</h4>
+      <h4> {costForTwo}</h4>
       <h4> {deliveryTime} minutes</h4>
     </div>
   );
