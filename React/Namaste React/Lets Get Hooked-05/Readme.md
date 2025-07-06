@@ -8,6 +8,8 @@
 - **Default and named export/import**
 - **Use of Utils folder**: use to keep the mockData, hardCoded url like in image tag which use cloudinary image etc, helperFunction [ fetchData.js, ]
 - **Understanding the Hooks**
+- **Virtual DOM and diffing algorithm**
+- **React Fiber aka reconciliation algorithm**
 
 ## What we have done
 
@@ -20,6 +22,7 @@
 - Files in the utils folder usually contain utility functions, helpers, or plain JavaScript logic.
 - These are not React components hence follow the camelCase convention rather pascal convention.
   - apiHelper.js, formatDate.js, calculateTax.js, fetchData.js
+  - Move hardcoded values (e.g., URLs, static data) out of component files.
 
 ## Hooks in react
 

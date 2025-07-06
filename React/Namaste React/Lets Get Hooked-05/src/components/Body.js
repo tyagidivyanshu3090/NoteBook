@@ -10,7 +10,7 @@ const Body = () => {
   function handleTopRated() {
     // Filter restaurants having avgRating > 4.5
     const topRatedRestaurants = resData.filter(
-      (restaurant) => restaurant.info.avgRating > 4.5
+      (restaurant) => restaurant.info.avgRating > 4.3
     );
     // Update the state with filtered data
     setRestaurantList(topRatedRestaurants);
