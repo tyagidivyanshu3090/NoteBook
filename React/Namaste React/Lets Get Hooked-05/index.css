@@ -52,6 +52,34 @@
   margin-bottom: 24px;
 }
 
+.search-filter-container {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.filter-btn button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #ff6b6b;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn button:hover {
+  background-color: #ff4c4c;
+}
+
 /* Restaurant Container */
 .restaurant-container {
   display: flex;
