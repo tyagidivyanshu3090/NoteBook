@@ -2,13 +2,18 @@ import { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { resData } from "../utils/mockData";
 
-console.log(resData);
 const Body = () => {
-  const [filteredData, setFiltedData] = useState(resData);
+  // Initialize state with the full restaurant list
+  const [restaurantList, setRestaurantList] = useState(resData);
 
-  function handleRated() {
-    const data = resData.filter((item) => item.info.avgRating > 4.5);
-    setFiltedData(data);
+  // Function to handle filtering top-rated restaurants
+  function handleTopRated() {
+    // Filter restaurants having avgRating > 4.5
+    const topRatedRestaurants = resData.filter(
+      (restaurant) => restaurant.info.avgRating > 4.5
+    );
+    // Update the state with filtered data
+    setRestaurantList(topRatedRestaurants);
   }
 
   return (
@@ -18,13 +23,13 @@ const Body = () => {
           <input type="text" placeholder="Search restaurants..." />
         </div>
         <div className="filter-btn">
-          <button onClick={handleRated}>Top rated Restaurant</button>
+          <button onClick={handleTopRated}>Top Rated Restaurants</button>
         </div>
       </div>
 
       <div className="restaurant-container">
-        {/*  Restaurant Card -> Reused */}
-        <RestaurantCard resData={filteredData} />
+        {/* Pass filtered data to RestaurantCard */}
+        <RestaurantCard resData={restaurantList} />
       </div>
     </div>
   );

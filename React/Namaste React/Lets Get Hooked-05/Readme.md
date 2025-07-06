@@ -23,4 +23,12 @@
 
 ## Hooks in react
 
-- In the application we are building a filter button such that on click of it -> we show all the restaurant which have rating > 4.0
+- In the application we are building a filter button such that on click of it -> we show all the restaurant which have rating > 4.0.
+  - To implement this functionality we have to use the react state Variable [ dynamically update the list of restaurants ]
+
+### How does it work?
+
+- ✅ Initially, all restaurants are displayed because restaurantList is initialized with resData.
+- ✅ When we click "Top Rated Restaurants": The handleTopRated function is called. It filters the original data to include only restaurants with avgRating > 4.5.
+- setRestaurantList(topRatedRestaurants) updates the state with this new filtered list.
+- The component re-renders, and RestaurantCard receives the updated list as a prop.
