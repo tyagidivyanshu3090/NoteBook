@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { resData } from "../utils/mockData";
+import { resData } from "../utils/mockData"; // Replacing the mock data with API call in useEffect
 
 const Body = () => {
   // Initialize state with the full restaurant list
@@ -15,7 +15,9 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     let data = await response.json();
-    console.log(data);
+    setRestaurantList(
+      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   }
 
   // Function to handle filtering top-rated restaurants
@@ -30,7 +32,6 @@ const Body = () => {
 
   return (
     <div className="body">
-      {console.log("This is component")}
       <div className="search-filter-container">
         <div className="search">
           <input type="text" placeholder="Search restaurants..." />
