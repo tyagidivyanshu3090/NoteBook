@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { resData } from "../utils/mockData"; // Replacing the mock data with API call in useEffect
 
 const Body = () => {
   // Initialize state with the full restaurant list
-  const [restaurantList, setRestaurantList] = useState(resData);
+  const [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
     getData();
@@ -23,11 +22,16 @@ const Body = () => {
   // Function to handle filtering top-rated restaurants
   function handleTopRated() {
     // Filter restaurants having avgRating > 4.5
-    const topRatedRestaurants = resData.filter(
+    const topRatedRestaurants = restaurantList.filter(
       (restaurant) => restaurant.info.avgRating > 4.3
     );
     // Update the state with filtered data
     setRestaurantList(topRatedRestaurants);
+  }
+
+  // Implementing the shimmer UI basic
+  if (restaurantList.length === 0) {
+    return <h1>Loading the webpage</h1>;
   }
 
   return (
