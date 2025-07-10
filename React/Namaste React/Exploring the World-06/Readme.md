@@ -5,8 +5,20 @@
   - Wait then Render.
   - Render then Fetch and Re-render (preferred in React).
 - **useEffect hook + CORS policy**
+  - fetch() function -> Takes URL + Option
 - **Shimmer UI**: Concept of displaying a skeleton/fake page during loading.
 - **Understanding the useState variable** using login/logout in header
+- **Implementing the search functionality**
+  - Implemented using includes function of js
+
+```jsx
+function handleSearch() {
+  const searched = restaurantList.filter((restaurant) =>
+    restaurant.info.name.toLowerCase().includes(searchItem.toLowerCase())
+  );
+  setRestaurantList(searched);
+}
+```
 
 ## Notes:
 
