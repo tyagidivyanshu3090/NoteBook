@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  // Initialize state with the full restaurant list
   const [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
@@ -15,23 +15,40 @@ const Body = () => {
     );
     let data = await response.json();
     setRestaurantList(
-      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || []
     );
   }
 
-  // Function to handle filtering top-rated restaurants
   function handleTopRated() {
-    // Filter restaurants having avgRating > 4.5
     const topRatedRestaurants = restaurantList.filter(
       (restaurant) => restaurant.info.avgRating > 4.3
     );
-    // Update the state with filtered data
     setRestaurantList(topRatedRestaurants);
   }
 
-  // Implementing the shimmer UI basic
+  // Show shimmer while data is loading
   if (restaurantList.length === 0) {
-    return <h1>Loading the webpage</h1>;
+    return (
+      <div className="body">
+        <div className="search-filter-container">
+          <div className="search">
+            <input type="text" placeholder="Search restaurants..." />
+          </div>
+          <div className="filter-btn">
+            <button onClick={handleTopRated}>Top Rated Restaurants</button>
+          </div>
+        </div>
+
+        <div className="shimmer-container">
+          {Array(12)
+            .fill("")
+            .map((_, index) => (
+              <Shimmer key={index} />
+            ))}
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -46,7 +63,6 @@ const Body = () => {
       </div>
 
       <div className="restaurant-container">
-        {/* Pass filtered data to RestaurantCard */}
         <RestaurantCard resData={restaurantList} />
       </div>
     </div>
