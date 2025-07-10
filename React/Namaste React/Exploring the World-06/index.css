@@ -173,3 +173,19 @@
     background-position: 400% 0;
   }
 }
+
+/* Login Button css -> header component */
+.login {
+  padding: 10px 20px;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login:hover {
+  background-color: #ff4c4c;
+}
