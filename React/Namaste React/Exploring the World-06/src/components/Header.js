@@ -3,8 +3,7 @@ import { Logo_URL } from "../utils/constant";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
-  //  Checking what will be rendered component or button on click
-  console.log(`header component rendered due to ${btnName}`);
+
   return (
     <div className="header">
       <div className="logo-container">

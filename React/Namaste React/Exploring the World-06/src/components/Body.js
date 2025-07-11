@@ -3,7 +3,8 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [restaurantList, setRestaurantList] = useState([]);
+  const [originalRestaurantList, setOriginalRestaurantList] = useState([]);
+  const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [searchItem, setSearchItem] = useState("");
 
   useEffect(() => {
@@ -15,24 +16,24 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     let data = await response.json();
-    setRestaurantList(
+    setOriginalRestaurantList(
       data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants || []
     );
   }
 
   function handleTopRated() {
-    const topRatedRestaurants = restaurantList.filter(
+    const topRatedRestaurants = originalRestaurantList.filter(
       (restaurant) => restaurant.info.avgRating > 4.3
     );
-    setRestaurantList(topRatedRestaurants);
+    setOriginalRestaurantList(topRatedRestaurants);
   }
 
   function handleSearch() {
-    const searched = restaurantList.filter((restaurant) =>
+    const searched = originalRestaurantList.filter((restaurant) =>
       restaurant.info.name.toLowerCase().includes(searchItem.toLowerCase())
     );
-    setRestaurantList(searched);
+    setOriginalRestaurantList(searched);
   }
 
   return (
@@ -56,7 +57,7 @@ const Body = () => {
       </div>
 
       <div className="restaurant-container">
-        <RestaurantCard resData={restaurantList} />
+        <RestaurantCard resData={originalRestaurantList} />
       </div>
     </div>
   );
