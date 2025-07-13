@@ -43,3 +43,7 @@ const [restaurantList, setRestaurantList] = useState([]);
 - `Array(12)`: Creates a new array with 12 empty slots. Example: [empty × 12].
 - `.fill("")`: Fills all those empty slots with "" (empty strings).
   - This makes it a real, usable array like: ["", "", "", ..., ""] (12 times).
+
+## Lecture 6.2: 5 minutes
+
+- About cors proxy website
