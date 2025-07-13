@@ -9,7 +9,7 @@
 - **Shimmer UI**: Concept of displaying a skeleton/fake page during loading.
 - **Understanding the useState variable** using login/logout in header
 - **Implementing the search functionality**
-  - Implemented using includes function of js
+  - Implemented using `includes function` of js
 
 ```jsx
 function handleSearch() {

@@ -3,6 +3,8 @@ import { CDN_URL } from "../utils/constant";
 const RestaurantCard = ({ resData }) => {
   const resList = resData;
 
+ 
+
   return (
     <div className="restaurant-container">
       {resData.map((item) => {
