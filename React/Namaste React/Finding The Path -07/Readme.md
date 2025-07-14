@@ -1,5 +1,10 @@
 # Finding the Path: Routing
 
+- **Understanding the useEffect and useState hook**
+- **Understanding the Routes**
+
+## Hooks
+
 - **Understanding the useEffect hook**
 
   - The tutor talked about the 3 flavours of useEffect: when it is called.
@@ -11,3 +16,9 @@
   - Never create the useState outside of the body of a functional component.
   - Create `local state variable` inside the functional component
   - **Always define the state variable on the top of the body of functional component** This is a best practice and a strong convention.
+
+## Understading React-router dom hooks
+
+```jsx
+npm i react-router-dom
+```

@@ -207,3 +207,49 @@
 .login:hover {
   background-color: #ff4c4c;
 }
+
+/* About us */
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-intro {
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-section {
+  margin-bottom: 30px;
+}
+
+.about-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-section p,
+.about-section ul {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.about-section ul {
+  padding-left: 20px;
+}
+
+.about-section li {
+  margin-bottom: 8px;
+}

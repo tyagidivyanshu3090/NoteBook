@@ -65,11 +65,11 @@ const Body = () => {
         </div>
         <div className="filter-btn">
           <button onClick={handleTopRated}>Top Rated Restaurants</button>
-          <button
+          {/* <button
             onClick={() => setFilteredRestaurantList(originalRestaurantList)}
           >
             Clear Filters
-          </button>
+          </button> */}
         </div>
       </div>
 
