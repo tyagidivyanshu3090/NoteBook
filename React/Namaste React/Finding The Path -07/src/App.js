@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Children } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Header from "./components/Header";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
@@ -11,9 +11,8 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <div className="">
-        <Body />
-      </div>
+
+      <Outlet />
     </div>
   );
 };
@@ -23,14 +22,20 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
+    children: [
+      {
+        index: true, // Renders HomePage when path is exactly '/'
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+    ],
   },
 ]);
 

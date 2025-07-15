@@ -2,7 +2,8 @@
 
 - **Understanding the useEffect and useState hook**
 - **Understanding the Routes**
-  - useRouteError hook of react-router-dom
+  - `useRouteError` hook of react-router-dom
+  - `isRouteErrorResponse` hook is also used
 - **Implementing routing in React application**
 - **Different URL routes and corresponding pages within a single-page application.**
   - Essential concepts like createBrowserRouter for configuration, RouterProvider for rendering, and Link for seamless, non-reloading navigation

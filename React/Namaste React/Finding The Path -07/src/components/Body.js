@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
+  console.log("Body is rendered");
   const [originalRestaurantList, setOriginalRestaurantList] = useState([]);
   const [filteredRestaurantList, setFilteredRestaurantList] = useState([]);
   const [searchItem, setSearchItem] = useState("");
