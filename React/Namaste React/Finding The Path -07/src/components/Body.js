@@ -14,12 +14,13 @@ const Body = () => {
   async function getData() {
     try {
       const response = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.63270&lng=77.21980&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      console.log(data?.data?.cards[6]);
       const restaurants =
         data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants || [];
