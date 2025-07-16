@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { CDN_URL } from "../utils/constant";
+import "./RestaurantMenu.css"; // Import the CSS file
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
@@ -13,14 +14,7 @@ const RestaurantMenu = () => {
     const response = await fetch(
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=697263&catalog_qa=undefined&submitAction=ENTER"
     );
-    //https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=201862&catalog_qa=undefined&submitAction=ENTER
     const data = await response.json();
-
-    // ~ Checking the API
-    // console.log(
-    //   data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-    //     ?.card?.itemCards
-    // );
 
     setResInfo(data?.data?.cards[2]?.card?.card?.info);
     setResData(
@@ -29,19 +23,15 @@ const RestaurantMenu = () => {
     );
   }
 
-  const { name, city, cloudinaryImageId, cuisines, avgRating } = resInfo;
+  const { name, city, cuisines, avgRating } = resInfo;
 
   return (
     <>
-      <div style={{ padding: "20px" }}>
+      {/* Top component (heading) centered */}
+      <div className="restaurant-header">
         {name ? (
           <>
             <h1>{name}</h1>
-            {/* <img
-              src={CDN_URL + cloudinaryImageId}
-              alt={name}
-              style={{ width: "300px", borderRadius: "10px" }}
-            /> */}
             <h3>📍 {city}</h3>
             <h4>Cuisines: {cuisines?.join(", ")}</h4>
             <h4>⭐ Average Rating: {avgRating}</h4>
@@ -50,14 +40,29 @@ const RestaurantMenu = () => {
           <h2>Loading...</h2>
         )}
       </div>
-      <div>
-        {restData.map((restuarant) => {
-          return (
-            <div key={restuarant?.card?.info?.id}>
-              <h3>{restuarant?.card?.info?.name}</h3>
+
+      {/* Items rendered in the map with flex property */}
+      <div className="menu-items-container">
+        {restData.map((restaurant) => (
+          <div key={restaurant?.card?.info?.id} className="menu-item">
+            {/* Left side: Item info */}
+            <div className="menu-item-info">
+              <h3>{restaurant?.card?.info?.name}</h3>
+              <p>₹{restaurant?.card?.info?.price / 100}</p>
+              <p>{restaurant?.card?.info?.description}</p>
             </div>
-          );
-        })}
+
+            {/* Right side: Image */}
+            <div className="menu-item-image">
+              {restaurant?.card?.info?.imageId && (
+                <img
+                  src={CDN_URL + restaurant?.card?.info?.imageId}
+                  alt={restaurant?.card?.info?.name}
+                />
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </>
   );
