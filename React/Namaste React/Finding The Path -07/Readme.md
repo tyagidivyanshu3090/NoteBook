@@ -4,6 +4,8 @@
 - **Understanding the Routes**
   - `useRouteError` hook of react-router-dom
   - `isRouteErrorResponse` hook is also used
+- **Link tag over anchor tag**
+  - Difference btw navlink and link tag
 - **Implementing routing in React application**
 - **Different URL routes and corresponding pages within a single-page application.**
   - Essential concepts like createBrowserRouter for configuration, RouterProvider for rendering, and Link for seamless, non-reloading navigation
