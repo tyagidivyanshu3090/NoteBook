@@ -31,3 +31,14 @@
 ```jsx
 npm i react-router-dom
 ```
+
+## what is outlet?
+
+- The <Outlet /> component in React Router v6+ acts as a placeholder for rendering nested routes (child routes) within a parent route's component.
+- Named import from react-router-dom
+
+## what is Link?
+
+- similar to anchor tag.
+- use `to` over `href` for redirection
+- Named import from react-router-dom
