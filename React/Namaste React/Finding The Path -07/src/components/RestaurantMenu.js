@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { CDN_URL } from "../utils/constant";
 import "./RestaurantMenu.css"; // Import the CSS file
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState({});
   const [restData, setResData] = useState([]);
+  const param = useParams();
+  console.log(param);
+  const { resId } = param;
 
   useEffect(() => {
     getData();
@@ -12,7 +16,7 @@ const RestaurantMenu = () => {
 
   async function getData() {
     const response = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=697263&catalog_qa=undefined&submitAction=ENTER"
+      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
     );
     const data = await response.json();
 
