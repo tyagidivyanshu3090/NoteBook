@@ -7,10 +7,13 @@
 - **Link tag over anchor tag**
   - Difference btw navlink and link tag
 - **Implementing routing in React application**
+  - 2 Types of routing:
+    - Client side Routing
+    - Server side Routing [ not rendering ]
 - **Different URL routes and corresponding pages within a single-page application.**
   - Essential concepts like createBrowserRouter for configuration, RouterProvider for rendering, and Link for seamless, non-reloading navigation
 - **dynamic routing for unique content, error handling with custom pages and the useRouteError hook.**
-- **distinction between client-side and server-side routing**
+
 
 ## Hooks
 
