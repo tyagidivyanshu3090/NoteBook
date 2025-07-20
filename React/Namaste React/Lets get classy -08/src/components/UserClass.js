@@ -2,16 +2,22 @@ import React, { Component } from "react";
 import "./UserCard.css"; // Link to external CSS
 
 class UserClass extends Component {
+  // The constructor is optional if you're not using state or binding methods,
+  // but it's good practice to include it if you're explicitly dealing with props here.
+  constructor(props) {
+    super(props); // IMPORTANT: Always call super(props) in the constructor
+    // This ensures 'this.props' is initialized before your constructor code runs.
+    console.log("Props in constructor:", this.props); // You can access them here
+  }
   render() {
+
+    
     return (
       <div className="user-card">
-        <h2>Name: Divyanshu</h2>
-        <h3>Location: Delhi</h3>
-        <h4>Contact: @Divyanshu422 on Twitter</h4>
-        <p>
-          Bio: A passionate web developer with a love for creating interactive
-          applications.
-        </p>
+        <h2>Name: </h2>
+        <h3>Location: </h3>
+        <h4>Contact:</h4>
+        <p>Bio:</p>
       </div>
     );
   }
