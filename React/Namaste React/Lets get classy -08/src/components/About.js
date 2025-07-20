@@ -10,7 +10,7 @@ const About = () => {
   };
   return (
     <div className="about-container">
-      <UserClass name={identity} />
+      <UserClass data={identity} />
     </div>
   );
 };

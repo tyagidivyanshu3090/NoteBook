@@ -10,14 +10,15 @@ class UserClass extends Component {
     console.log("Props in constructor:", this.props); // You can access them here
   }
   render() {
+    // Destructuring props for easier access: form this.props.data
+    const { name, location, contact, bio } = this.props.data;
 
-    
     return (
       <div className="user-card">
-        <h2>Name: </h2>
-        <h3>Location: </h3>
-        <h4>Contact:</h4>
-        <p>Bio:</p>
+        <h2>Name: {name}</h2>
+        <h3>Location: {location}</h3>
+        <h4>Contact:{contact}</h4>
+        <p>Bio:{bio}</p>
       </div>
     );
   }
