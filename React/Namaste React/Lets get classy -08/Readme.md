@@ -11,3 +11,9 @@
 - `this.props:` This is the magic object. It automatically contains all the attributes you pass to your component in JSX. Immutability: this.props is read-only.
 - You should never modify `this.props` directly inside the component. If you need to change data, that data should be managed as state within the component, or the parent component should pass different props.
 - super(props): If you define a constructor in your class component, you must call super(props) as the very first statement. This initializes the base React.Component class and ensures that this.props is correctly set up before your constructor code runs. Without super(props), this.props would be undefined inside the constructor (though it would be available in render() and other lifecycle methods).
+
+## Understanding the React life cycle Diagram
+
+- In react there is 2 phase: Render phase and Commit phase
+  - In render phase, the constructor and render phase is called
+  - The commit phase in which componentDidMount is called is batched [ meaning parent and multiple children component -> commit phase is batched ]. This is done for optimization
