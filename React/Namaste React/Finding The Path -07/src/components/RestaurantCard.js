@@ -9,7 +9,10 @@ const RestaurantCard = ({ resData }) => {
         item?.info?.id;
         return (
           <div key={item?.info?.id}>
-            <Link to={"/restaurant/" + item?.info?.id}>
+            <Link
+              to={"/restaurant/" + item?.info?.id}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
               <div className="rest-card">
                 <img
                   src={`${CDN_URL}${item?.info?.cloudinaryImageId}`}
