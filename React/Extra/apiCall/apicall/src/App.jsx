@@ -7,18 +7,17 @@ import {
   Box,
   Chip,
 } from "@mui/material";
+import api from "../api/axios";
 
 const App = () => {
   const [todo, setTodo] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then((response) => response.json())
-      .then((json) => {
-        setTodo(json);
-        setLoading(false);
-      });
+    // Using axios
+    api.get("todos/1").then((response) => {
+      console.log("Data fetched successfully:", response.data);
+    });
   }, []);
 
   return (
