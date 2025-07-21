@@ -7,7 +7,23 @@ class UserClass extends Component {
     this.state = {
       count: 0,
       count2: 10,
+      apiData: {
+        userId: "",
+        title: "Loading...",
+        completed: false,
+      },
     };
+  }
+
+  // Fetching data when the component mounts
+  // This is an example of a side effect in a class component
+  async componentDidMount() {
+    const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      apiData: json,
+    });
   }
 
   render() {
@@ -29,7 +45,7 @@ class UserClass extends Component {
             <strong>Count 2:</strong> {count2}
           </p>
         </div>
-
+        <p>{this.state.apiData.title}</p>
         <div className="button-group">
           <button
             className="btn"

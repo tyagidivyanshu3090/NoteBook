@@ -17,3 +17,8 @@
 - In react there is 2 phase: Render phase and Commit phase
   - In render phase, the constructor and render phase is called
   - The commit phase in which componentDidMount is called is batched [ meaning parent and multiple children component -> commit phase is batched ]. This is done for optimization
+
+## API Call:
+
+- In the code we have made github user api call
+- Making the ComponentDidMount as a async function
