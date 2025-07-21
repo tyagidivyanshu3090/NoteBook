@@ -18,12 +18,27 @@ class UserClass extends Component {
   // Fetching data when the component mounts
   // This is an example of a side effect in a class component
   async componentDidMount() {
+    console.log(
+      "Component mounted! -> only once when the component is mounted"
+    );
     const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
     const json = await data.json();
     console.log(json);
     this.setState({
       apiData: json,
     });
+  }
+
+  componentDidUpdate() {
+    console.log("Component updated!");
+    // You can add logic here to handle updates, like fetching new data
+  }
+
+  componentWillUnmount() {
+    console.log("Component will unmount!");
+    console.log(
+      "Component is being removed from the DOM -> cleanup! code are used here like removing event listeners, canceling API calls, ClearsetTimeout etc."
+    );
   }
 
   render() {
