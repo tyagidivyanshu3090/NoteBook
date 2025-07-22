@@ -8,3 +8,8 @@
 - **Suspense:** A React component used to handle asynchronous loading states and provide a fallback UI while code is being fetched.
   **On-Demand Loading:** A method where code is loaded only when it's needed, enhancing performance.
   **Network Optimization:** Considerations for building applications that perform well even with varying internet speeds or offline scenarios.
+
+
+## Custom Hook:
+- useRestaurantMenu: used to make the api call
+- 
