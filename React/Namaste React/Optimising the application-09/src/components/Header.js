@@ -26,7 +26,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>Cart</li>
-          <li>{onlineStatus ? "✅" : "🔴"}</li>
+          <li>OnlineStatus: {onlineStatus ? "✅" : "🔴"}</li>
         </ul>
       </div>
       <button
