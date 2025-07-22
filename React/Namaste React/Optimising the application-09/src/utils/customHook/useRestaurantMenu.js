@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 
 // It takes resId and returns the restaurant Information
 function useRestaurantMenu(resId) {
-  console.log(resId);
   const [resInfo, setResInfo] = useState({}); // for the restaurant Name
   const [restData, setResData] = useState([]);
+
+  // Fetching the restaurant menu data
   useEffect(() => {
     getData();
   }, []);

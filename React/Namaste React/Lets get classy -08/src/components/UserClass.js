@@ -24,6 +24,9 @@ class UserClass extends Component {
     const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
     const json = await data.json();
     console.log(json);
+    // setInterval(() => {
+    //   console.log("Data fetched successfully!");
+    // }, 1000);
     this.setState({
       apiData: json,
     });

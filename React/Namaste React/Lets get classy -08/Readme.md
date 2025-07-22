@@ -22,3 +22,7 @@
 
 - In the code we have made github user api call
 - Making the ComponentDidMount as a async function
+
+## Difference btw setTimeout and setInterval
+
+- The main difference is that setTimeout runs a function only once after a specific delay, while setInterval runs a function repeatedly at a specific interval.

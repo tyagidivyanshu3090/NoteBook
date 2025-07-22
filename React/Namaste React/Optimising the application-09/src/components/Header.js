@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Logo_URL } from "../utils/constant";
+import { Logo_URL } from "../utils/constant/constant";
 import { Link, NavLink } from "react-router-dom";
-import useOnlineStatus from "../App";
+import useOnlineStatus from "../utils/customHook/useOnlineStatus"; // Custom hook to check online status
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");

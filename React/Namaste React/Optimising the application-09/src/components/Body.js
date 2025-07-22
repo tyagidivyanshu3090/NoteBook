@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import useRestaurantCard from "../utils/useRestaurantCard";
+import useRestaurantCard from "../utils/customHook/useRestaurantCard";
 
 const Body = () => {
   const [searchItem, setSearchItem] = useState("");

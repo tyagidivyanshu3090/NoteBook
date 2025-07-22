@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { CDN_URL } from "../utils/constant";
+import { CDN_URL } from "../utils/constant/constant";
 import "./RestaurantMenu.css"; // Import the CSS file
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import useRestaurantMenu from "../utils/customHook/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   const param = useParams();
