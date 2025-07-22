@@ -1,0 +1,53 @@
+/*  Restaurant Menu CSS */
+/* Styles for the top component (heading) */
+.restaurant-header {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Styles for the container of all menu items */
+.menu-items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles for each individual menu item */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 800px; /* Max width for larger screens */
+  margin: 10px 0;
+}
+
+/* Styles for the left side (item info) */
+.menu-item-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.menu-item-info h3 {
+  margin-bottom: 5px; /* Adjust as needed */
+}
+
+.menu-item-info p {
+  margin-bottom: 5px; /* Adjust as needed */
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Styles for the right side (item image) */
+.menu-item-image {
+  flex-shrink: 0;
+}
+
+.menu-item-image img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
