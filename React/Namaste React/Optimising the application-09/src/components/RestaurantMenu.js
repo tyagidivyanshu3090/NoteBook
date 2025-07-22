@@ -2,30 +2,13 @@ import React, { useState, useEffect } from "react";
 import { CDN_URL } from "../utils/constant";
 import "./RestaurantMenu.css"; // Import the CSS file
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState({});
-  const [restData, setResData] = useState([]);
   const param = useParams();
-  // console.log(param);
   const { resId } = param;
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  async function getData() {
-    const response = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
-    );
-    const data = await response.json();
-
-    setResInfo(data?.data?.cards[2]?.card?.card?.info);
-    setResData(
-      data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
-  }
+  const { resInfo, restData } = useRestaurantMenu(resId);
 
   const { name, city, cuisines, avgRating } = resInfo;
 

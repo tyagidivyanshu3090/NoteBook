@@ -46,3 +46,30 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
+
+
+
+
+import { useState, useEffect } from "react";
+
+const useOnlineStatus = () => {
+  // 1. Create a state variable to hold the status.
+  const [onlineStatus, setOnlineStatus] = useState(true);
+
+  // 2. Use useEffect to add event listeners once.
+  useEffect(() => {
+    // This runs when the component mounts
+    window.addEventListener("offline", () => {
+      setOnlineStatus(false);
+    });
+
+    window.addEventListener("online", () => {
+      setOnlineStatus(true);
+    });
+  }, []); // The empty array [] means this effect runs only once.
+
+  // 3. Return the current status to the component.
+  return onlineStatus;
+};
+
+export default useOnlineStatus;
