@@ -23,6 +23,9 @@ const Header = () => {
             <NavLink to="/about">About Us</NavLink>
           </li>
           <li>
+            <NavLink to="/grocery">Grocery</NavLink>
+          </li>
+          <li>
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>Cart</li>
