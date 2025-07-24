@@ -22,7 +22,7 @@ const Header = () => {
       <div className="hidden md:block">
         {" "}
         {/* Hide on small screens, show on medium and up */}
-        <ul className="flex items-center space-x-6 text-gray-700 font-medium">
+        <ul className="flex items-center space-x-6 text-gray-700 font-bold">
           <li>
             Online Status:{" "}
             <span className={onlineStatus ? "text-green-500" : "text-red-500"}>
