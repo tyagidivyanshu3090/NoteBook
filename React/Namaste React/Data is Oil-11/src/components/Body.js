@@ -1,20 +1,18 @@
-import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import { useState } from "react";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import useRestaurantCard from "../utils/customHook/useRestaurantCard"; // Custom hook to manage restaurant data
+import useRestaurantCard from "../utils/customHook/useRestaurantCard";
 
 const Body = () => {
   const [searchItem, setSearchItem] = useState("");
-
-  // Importing custom hook to manage restaurant data
   const {
     originalRestaurantList,
     filteredRestaurantList,
     setFilteredRestaurantList,
-    setOriginalRestaurantList, // You might not need to set original list directly here
   } = useRestaurantCard();
 
-  // Function to filter by top-rated restaurants
+  const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+
   function handleTopRated() {
     const topRatedRestaurants = originalRestaurantList.filter(
       (restaurant) => restaurant.info.avgRating > 4.3
@@ -22,7 +20,6 @@ const Body = () => {
     setFilteredRestaurantList(topRatedRestaurants);
   }
 
-  // Function to handle search
   function handleSearch() {
     const lowerCaseSearchItem = searchItem.toLowerCase();
     const searchedRestaurants = originalRestaurantList.filter((restaurant) =>
@@ -33,10 +30,9 @@ const Body = () => {
 
   // Show Shimmer while data is loading
   if (originalRestaurantList.length === 0) {
-    // Render multiple shimmer cards for a better loading experience
     return (
-      <div className="flex flex-wrap justify-center p-6 bg-gray-50 min-h-screen">
-        {Array(10) // Render 10 shimmer cards
+      <div className="flex flex-wrap justify-center gap-8 p-6 bg-gray-50 min-h-screen">
+        {Array(10)
           .fill("")
           .map((_, index) => (
             <Shimmer key={index} />
@@ -88,7 +84,21 @@ const Body = () => {
           </p>
         </div>
       ) : (
-        <RestaurantCard resData={filteredRestaurantList} />
+        // ✅ The container div is now OUTSIDE the map
+        <div className="flex flex-wrap justify-center gap-8 p-6">
+          {/* ✅ Only ONE map loop now */}
+          {filteredRestaurantList.map((restaurant) =>
+            // Use a ternary operator for cleaner conditional rendering
+            restaurant.info.name === "Burger King" ? (
+              <PromotedRestaurantCard
+                key={restaurant.info.id}
+                resData={restaurant}
+              />
+            ) : (
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            )
+          )}
+        </div>
       )}
     </div>
   );
