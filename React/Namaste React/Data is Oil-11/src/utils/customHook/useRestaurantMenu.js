@@ -18,13 +18,19 @@ function useRestaurantMenu(resId) {
       `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.63270&lng=77.21980&restaurantId=${resId}&catalog_qa=undefined&submitAction=ENTER`
     );
     const data = await response.json();
-    console.log("the data on extraction is", data);
 
     setResInfo(data?.data?.cards[2]?.card?.card?.info);
-    setResData(
-      data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-        ?.card?.itemCards
-    );
+
+    const categories =
+      data?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+        (item) => {
+          return (
+            item?.card?.card?.["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+          );
+        }
+      );
+    setResData(categories);
   }
   return { resInfo, restData };
 }

@@ -7,7 +7,7 @@ const useRestaurantCard = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log("Card are", originalRestaurantList);
+
   async function getData() {
     try {
       const response = await fetch(

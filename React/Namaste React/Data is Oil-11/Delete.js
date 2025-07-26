@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import Profile from "./Profile"; // Import the base component
-import { withPromotedLabel } from "./withPromotedLabel"; // Import the HOC
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {restData.map((restaurant) => (
+    <div
+      key={restaurant?.card?.info?.id}
+      className="flex flex-col md:flex-row bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 overflow-hidden"
+    >
+      {/* Left side: Item info */}
+      <div className="p-4 flex-1">
+        <h3 className="text-lg font-bold text-gray-800 mb-1">
+          {restaurant?.card?.info?.name}
+        </h3>
+        <p className="text-green-700 font-semibold mb-2">
+          ₹
+          {restaurant?.card?.info?.price / 100 ||
+            restaurant?.card?.info?.finalPrice / 100 ||
+            restaurant?.card?.info?.defaultPrice / 100}
+        </p>
+        <p className="text-sm text-gray-600 line-clamp-3">
+          {restaurant?.card?.info?.description || "No description available."}
+        </p>
+      </div>
 
-// Create the enhanced component OUTSIDE of App, using the imported HOC and component
-const PromotedProfile = withPromotedLabel(Profile);
-
-// The main App component now just focuses on logic and layout
-const App = () => {
-  const [data, setData] = useState([
-    { name: "Alice", marks: 95 },
-    { name: "Bob", marks: 85 },
-    { name: "Charlie", marks: 91 },
-  ]);
-
-  return (
-    <div>
-      <h1>Student List</h1>
-      {data.map((item) => {
-        // The logic remains the same
-        return item.marks > 90 ? (
-          <PromotedProfile key={item.name} name={item.name} />
-        ) : (
-          <Profile key={item.name} name={item.name} />
-        );
-      })}
+      {/* Right side: Image */}
+      <div className="w-full md:w-36 flex-shrink-0 relative">
+        {restaurant?.card?.info?.imageId && (
+          <img
+            src={CDN_URL + restaurant?.card?.info?.imageId}
+            alt={restaurant?.card?.info?.name || "Menu Item"}
+            className="w-full h-full object-cover rounded-b-lg md:rounded-l-none md:rounded-r-lg"
+          />
+        )}
+      </div>
     </div>
-  );
-};
-
-export default App;
-
-
-
-
+  ))}
+</div>;

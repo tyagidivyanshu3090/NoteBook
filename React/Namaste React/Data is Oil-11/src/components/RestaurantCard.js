@@ -7,7 +7,7 @@ const RestaurantCard = ({ resData }) => {
 
   // The component now returns the JSX for a single card
   return (
-    <Link
+    <Link 
       to={"/restaurant/" + info?.id}
       className="block no-underline text-inherit" // Ensure link doesn't add default styling
     >
