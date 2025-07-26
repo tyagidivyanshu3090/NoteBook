@@ -24,8 +24,8 @@ const Accordion = ({ accordian }) => {
       <div
         className="flex justify-between items-center p-4 cursor-pointer hover:bg-gray-50"
         onClick={handleToggle}
-        aria-expanded={isOpen}
-        aria-controls={`accordion-content-${title}`}
+        // aria-expanded={isOpen}
+        //aria-controls={`accordion-content-${title}`}
       >
         <h2 className="text-lg font-bold text-gray-800">
           {title} ({itemCards.length})
@@ -42,6 +42,7 @@ const Accordion = ({ accordian }) => {
           className="p-4 border-t border-gray-200"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {console.log(itemCards)}
             {itemCards.map((item) => (
               <div
                 key={item?.card?.info?.id}
@@ -53,7 +54,9 @@ const Accordion = ({ accordian }) => {
                     {item?.card?.info?.name}
                   </h3>
                   <p className="text-green-700 font-semibold mb-2">
-                    ₹{item?.card?.info?.price / 100 || "N/A"}
+                    ₹
+                    {item?.card?.info?.price / 100 ||
+                      item?.card?.info?.defaultPrice / 100}
                   </p>
                   <p className="text-sm text-gray-600 line-clamp-3">
                     {item?.card?.info?.description ||

@@ -53,8 +53,9 @@ const RestaurantMenu = () => {
       */}
 
       {restData.map((accordian) => {
+        console.log(accordian);
         return (
-          <div key={accordian?.card?.card?.categoryId}>
+          <div key={accordian?.card?.card?.title}>
             <Accordion accordian={accordian} />
           </div>
         );
