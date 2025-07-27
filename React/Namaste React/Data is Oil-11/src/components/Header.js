@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Logo_URL } from "../utils/constant/constant";
 import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/customHook/useOnlineStatus"; // Custom hook to check online status
-
+import LoggedContext from "../utils/context/UserContext"; // Importing context for user login state
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
   // Custom hook to check online status
   const onlineStatus = useOnlineStatus();
+
+  const data = useContext(LoggedContext); // Using context to get user login state
+  console.log("the context data is", data);
 
   return (
     <div className="flex justify-between items-center bg-white shadow-md px-4 py-2 sm:px-6 lg:px-8">
@@ -74,7 +77,7 @@ const Header = () => {
               to="/cart"
               className="hover:text-orange-500 transition duration-300"
             >
-              Cart
+              {data.loggedInUser}
             </Link>
           </li>
         </ul>
