@@ -1,14 +1,17 @@
-// src/App.js
-import React, { useState } from 'react';
-import { ThemeContext } from './ThemeContext';
-import Toolbar from './Toolbar';
+// src/Header.js
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
 
-function App() {
-  const [theme, setTheme] = useState('dark'); // This is the real data we'll provide.
+export default function Header() {
+  // Use the context to get the shared theme and toggle function.
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <Toolbar />
-    </ThemeContext.Provider>
+    <header>
+      <h1>My App</h1>
+      <button onClick={toggleTheme}>
+        Switch to {theme === "light" ? "Dark" : "Light"} Mode
+      </button>
+    </header>
   );
 }

@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import LoggedContext from "../utils/context/UserContext"; // Importing context for user login state
 import useRestaurantCard from "../utils/customHook/useRestaurantCard";
 
 const Body = () => {
@@ -10,6 +11,8 @@ const Body = () => {
     filteredRestaurantList,
     setFilteredRestaurantList,
   } = useRestaurantCard();
+
+  const { data, setData } = useContext(LoggedContext);
 
   const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
 
@@ -71,6 +74,15 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+      </div>
+      {/* Use context */}
+      <div>
+        <input
+          type="text"
+          onChange={(e) => setData({ ...data, loggedInUser: e.target.value })}
+          placeholder="UserName"
+          className="flex-1 p-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-orange-400 text-gray-700 shadow-sm"
+        />
       </div>
 
       {/* Restaurant Cards Container */}

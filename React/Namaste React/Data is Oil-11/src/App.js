@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Body from "./components/Body";
 import Header from "./components/Header";
@@ -12,11 +12,20 @@ const Grocery = lazy(() =>
   import("./components/lazyLoadingComponent/GroceryComponent")
 );
 
+import UserContext from "./utils/context/UserContext"; // Importing UserContext
 const AppLayout = () => {
+  // Dynamic value used for the Provider
+  const [data, setData] = useState({
+    isLoggedIn: true,
+    loggedInUser: "Divyanshu Tyagi",
+  });
+
   return (
     <div className="app">
-      <Header />
-      <Outlet />
+      <UserContext.Provider value={{ data, setData }}>
+        <Header />
+        <Outlet />
+      </UserContext.Provider>
     </div>
   );
 };
