@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/customHook/useRestaurantMenu";
 import Shimmer from "./Shimmer"; // Assuming you have your Shimmer component for loading state
@@ -6,6 +6,15 @@ import Accordion from "./Accordion";
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); // Destructure directly
+
+  const [showIndex, setShowIndex] = useState(0); // State to manage which accordion is open
+
+  console.log(showIndex);
+
+  // Function to toggle the accordion's visibility
+  // const handleToggle = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   // Using your custom hook to fetch restaurant info and menu items
   const { resInfo, restData } = useRestaurantMenu(resId);
@@ -52,11 +61,15 @@ const RestaurantMenu = () => {
       ---
       */}
 
-      {restData.map((accordian) => {
-        console.log(accordian);
+      {restData.map((accordian, index) => {
         return (
           <div key={accordian?.card?.card?.title}>
-            <Accordion accordian={accordian} />
+            <Accordion
+              accordian={accordian}
+              key={accordian?.card?.card?.title}
+              isOpen={index === showIndex} // Only the first accordion is open by default
+              setShowIndex={() => setShowIndex(index)} // Set the index of the accordion to show}
+            />
           </div>
         );
       })}
