@@ -1,19 +1,19 @@
-// 2. Create the Provider component
+// index.js (or main.jsx)
+import React from "react";
+import App from "./App";
+import ReactDOM from "react-dom/client";
 
-// Provide the new state object and its setter function
-<StateContext.Provider value={{ globalState, setGlobalState }}>
-  {children}
-</StateContext.Provider>;
 
-import React, { Children } from "react";
 
-const App = () => {
-  const [globalState, setGlobalState] = useState();
-  return (
-    <StateContext.Provider value={{ globalState, setGlobalState }}>
-      <Children />
-    </StateContext.Provider>
-  );
-};
+import { Provider } from "react-redux";
+import appStore from "./src/utils/redux_Store/appStore";
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    {/* Wrap your App with the Provider and pass it the store */}
+    <Provider store={appStore}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);

@@ -7,7 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
-
+import { Provider } from "react-redux";
 const Grocery = lazy(() =>
   import("./components/lazyLoadingComponent/GroceryComponent")
 );
@@ -22,10 +22,12 @@ const AppLayout = () => {
 
   return (
     <div className="app">
-      <UserContext.Provider value={{ data, setData }}>
-        <Header />
-        <Outlet />
-      </UserContext.Provider>
+      <Provider store={appStore}>
+        <UserContext.Provider value={{ data, setData }}>
+          <Header />
+          <Outlet />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };
