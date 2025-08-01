@@ -8,6 +8,8 @@ import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
+import appStore from "./utils/redux_Store/appStore";
+
 const Grocery = lazy(() =>
   import("./components/lazyLoadingComponent/GroceryComponent")
 );

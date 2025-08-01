@@ -3,8 +3,12 @@ import { Logo_URL } from "../utils/constant/constant";
 import { Link, NavLink } from "react-router-dom";
 import useOnlineStatus from "../utils/customHook/useOnlineStatus"; // Custom hook to check online status
 import LoggedContext from "../utils/context/UserContext"; // Importing context for user login state
+import { useSelector } from "react-redux";
+import { selectCartCount } from "../utils/redux_Store/slice/cartSlice";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+
+  const cartItem = useSelector(selectCartCount); // Using Redux to get cart items
 
   // Custom hook to check online status
   const onlineStatus = useOnlineStatus();
@@ -70,6 +74,14 @@ const Header = () => {
               className="hover:text-orange-500 transition duration-300"
             >
               Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/cart"
+              className="hover:text-orange-500 transition duration-300"
+            >
+              {cartItem} 🛒
             </Link>
           </li>
           <li>

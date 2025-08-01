@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [],
+  items: ["Pizza", "Burger", "Pasta"], // Example initial items in the cart
 };
 
 const cartSlice = createSlice({
@@ -33,5 +33,5 @@ export default cartSlice.reducer;
     - Return the Specific Data: Return the piece of state your component needs (e.g., state.cart.items).
   * Export the Function: Export the selector so you can import it into your components.
 */
-export const selectCartItems = (state) => state.cart.items;
-export const selectCartCount = (state) => state.cart.items.length;
+export const selectCartItems = (state) => state.cartItem.items;
+export const selectCartCount = (state) => state.cartItem.items.length;
