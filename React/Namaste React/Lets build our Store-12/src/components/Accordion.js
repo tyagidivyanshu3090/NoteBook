@@ -11,8 +11,8 @@ const Accordion = ({ accordian, isOpen, setShowIndex }) => {
   // In a real app, you would dispatch an action to a store (like Redux)
   // or lift the state up to a parent component.
   const handleAddItem = (item) => {
-    const payload = item?.card?.info?.name;
-    dispatch(addItem(payload));
+    // const payload = item?.card?.info?.name;
+    dispatch(addItem(item));
   };
 
   // If there are no items to display, don't render the component

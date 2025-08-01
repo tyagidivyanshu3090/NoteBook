@@ -15,6 +15,7 @@ const Grocery = lazy(() =>
 );
 
 import UserContext from "./utils/context/UserContext"; // Importing UserContext
+import CartItem from "./components/CartItem";
 const AppLayout = () => {
   // Dynamic value used for the Provider
   const [data, setData] = useState({
@@ -63,6 +64,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <CartItem />,
       },
     ],
   },
