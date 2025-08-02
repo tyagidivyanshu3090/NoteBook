@@ -9,8 +9,6 @@ const RestaurantMenu = () => {
 
   const [showIndex, setShowIndex] = useState(0); // State to manage which accordion is open
 
-  console.log(showIndex);
-
   // Function to toggle the accordion's visibility
   // const handleToggle = () => {
   //   setIsOpen(!isOpen);

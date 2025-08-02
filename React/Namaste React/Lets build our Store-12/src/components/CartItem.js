@@ -101,7 +101,7 @@ const Cart = () => {
                     item.quantity}
                 </p>
                 <button
-                  onClick={() => handleRemoveItem(item.card.info.id)}
+                  onClick={() => handleRemoveItem(item?.card?.info?.id)}
                   className="text-red-500 hover:text-red-700 text-sm font-semibold mt-1"
                 >
                   Remove
