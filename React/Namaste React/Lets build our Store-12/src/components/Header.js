@@ -8,7 +8,9 @@ import { selectCartCount } from "../utils/redux_Store/slice/cartSlice";
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
-  const cartItem = useSelector(selectCartCount); // Using Redux to get cart items
+  const cartItemLength = useSelector(selectCartCount); // Using Redux to get cart items
+  // selectCartCount is selector function which is (state) => state.cart.items.length.
+  // state means global store [appStore], cart is name of slice given in appStore, items is the initialName of the slice defined in slice and length is the
 
   // Custom hook to check online status
   const onlineStatus = useOnlineStatus();
@@ -81,7 +83,7 @@ const Header = () => {
               to="/cart"
               className="hover:text-orange-500 transition duration-300"
             >
-              {cartItem} 🛒
+              {cartItemLength} 🛒
             </Link>
           </li>
           <li>

@@ -9,6 +9,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
+      console.log("The action is", action);
+      console.log("The items are", state.items);
       state.items.push(action.payload);
     },
     removeItem: (state, action) => {
@@ -22,6 +24,8 @@ const cartSlice = createSlice({
 
 // exporting the actions [ created internally by RTK based on the reducer function names ]
 export const { addItem, removeItem, clearCart } = cartSlice.actions;
+
+
 
 // exporting slice reducer which is also created internally by RTK based on the initialState and reducers
 export default cartSlice.reducer;
