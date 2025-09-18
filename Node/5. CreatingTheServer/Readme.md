@@ -13,3 +13,11 @@ const http = require("http");
 # Note:
 
 - Instead of using the http module for creating the server. we use a wrapper on top of http which is **express**.
+
+# Running the Server:
+
+- To run the Node.js application, use the following command in your terminal:
+
+```
+node your_filename.js
+```

@@ -19,4 +19,12 @@ const server = http.createServer(function (req, res) {
 
 // 4. Start the server and make it listen on port 777
 // Now your server will wait for requests at http://localhost:777
-server.listen(777);
+
+// Choose a port to listen on
+const PORT = 7777;
+
+// Start the server and have it listen on the specified port
+server.listen(PORT, () => {
+  console.log(`Server is running and listening on http://localhost:${PORT}`);
+});
+
