@@ -21,3 +21,10 @@ const http = require("http");
 ```
 node your_filename.js
 ```
+
+## Mongodb:
+
+- Go to mongodb website
+- create a free MO Cluster
+- create a user
+- get the connection string
