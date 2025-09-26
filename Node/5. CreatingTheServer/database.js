@@ -39,6 +39,10 @@ async function main() {
   // insert, update, or delete documents.
   const collection = db.collection("User");
 
+  // Adding to database: db.collection.insertOne().
+  // Database operations like inserting a document are asynchronous, meaning they take time to complete.   To ensure the new data is added before you try to find it, you should use the await keyword.
+  const dataNew = { name: "Navjot", age: 25 };
+  await collection.insertOne(dataNew);
   // This is a placeholder where you would add your code to interact with
   // the database, like `collection.find()` or `collection.insertOne()`.
 
