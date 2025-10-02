@@ -1,5 +1,5 @@
 // In simple words, splice() is a "do-it-all" method for JavaScript arrays. It can:
-    // 1. Remove elements from an array.
+    // 1. Remove elements from an array. 
     // 2. Add new elements to an array.
     // 3. Replace elements (by doing both at the same time).
 
