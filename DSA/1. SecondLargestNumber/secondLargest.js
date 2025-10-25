@@ -22,7 +22,7 @@ function secondLargest(arr) {
     if (data > firstLargest) {
       secondLargest = firstLargest;
       firstLargest = data;
-    } else if (data > secondLargest && value !== firstLargest) {
+    } else if (data > secondLargest && data !== firstLargest) {
       // Added condition for duplicate
       secondLargest = data;
     }
