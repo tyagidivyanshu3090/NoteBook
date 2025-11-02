@@ -7,7 +7,7 @@ function countDigit(number) {
 
   // 2. Handle the "Negative" corner case
   // Convert the number to positive using Math.abs()
-  let num = Math.abs(n);
+  number = Math.abs(number);
 
   let count = 0;
   while (number > 0) {
@@ -19,7 +19,7 @@ function countDigit(number) {
   return count;
 }
 
-let input = 1974;
+let input = -1974;
 
 console.log("Number of digit is -> ", countDigit(input));
 
