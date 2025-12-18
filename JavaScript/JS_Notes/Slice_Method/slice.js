@@ -19,5 +19,16 @@ console.log(sliceCopy); // Output: ["apple", "banana", "cherry", "date", "elderb
 
 // ------------------------------------------------------------------
 
+// 2. Passing single argument
 
+let singleArg = fruits.slice(2);
 
+console.log(singleArg); // Output: ["cherry", "date", "elderberry"]
+
+// ------------------------------------------------------------------
+
+// 3. Negative start index
+
+let negativeStart = fruits.slice(-2);
+
+console.log(negativeStart); // Output: ["date", "elderberry"]
