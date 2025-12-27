@@ -15,6 +15,6 @@
   "author": "NamasteJavaScript",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.2.0"
   }
 }
